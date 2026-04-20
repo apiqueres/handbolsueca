@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TeamCard from '../../components/ui/TeamCard.astro';
+import { teams } from '../../data/teams';
+---
+
+<BaseLayout title="Equips" description="Tots els equips del Club Handbol Sueca">
+  <section class="bg-primary py-20">
+    <div class="container-custom text-center">
+      <h1 class="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-white" data-aos="fade-up">
+        Els Nostres Equips
+      </h1>
+      <p class="text-white/70 mt-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Des de l'escola base fins al sènior, el Club Handbol Sueca compta amb equips en totes les categories.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gray-soft">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {teams.map((team) => (
+          <TeamCard
+            slug={team.slug}
+            name={team.name}
+            category={team.category}
+            coach={team.coach}
+            image={team.image}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

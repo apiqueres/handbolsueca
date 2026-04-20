@@ -1,0 +1,336 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteConfig } from '../../data/site';
+---
+
+<BaseLayout title="Història" description="Història del Club Handbol Sueca des de la seua fundació">
+  <!-- Hero -->
+  <section class="relative bg-dark py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img src="/presentacion-todosequiposjuntos.jpeg" alt="" class="w-full h-full object-cover" />
+    </div>
+    <div class="container-custom relative z-10 text-center">
+      <span class="text-primary-light font-heading font-bold text-sm uppercase tracking-widest" data-aos="fade-up">
+        Des de {siteConfig.founded}
+      </span>
+      <h1 class="font-heading font-extrabold text-4xl md:text-6xl text-white mt-4 leading-tight" data-aos="fade-up" data-aos-delay="100">
+        La Nostra Història
+      </h1>
+      <p class="text-white/60 mt-6 text-lg max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+        Més de {new Date().getFullYear() - siteConfig.founded} anys formant esportistes i
+        persones a través del handbol a Sueca.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contingut -->
+  <article class="bg-white">
+
+    <!-- Els orígens -->
+    <section class="section-padding border-b border-dark/5">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7" data-aos="fade-right">
+            <span class="text-primary font-heading font-bold text-xs uppercase tracking-widest">Capítol I</span>
+            <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-dark mt-2 mb-6">
+              Els orígens <span class="text-primary">1970</span>
+            </h2>
+            <p class="text-dark/70 leading-relaxed mb-4 text-lg">
+              El Club Handbol Sueca va començar de manera informal l'any 1970, quan des de la
+              Delegació Provincial de Joventuts es rep un comunicat que suggereix la creació d'un
+              club d'handbol. Així naix el <strong class="text-dark">"Club Balonmano OJE de Sueca"</strong>.
+            </p>
+            <p class="text-dark/70 leading-relaxed mb-4">
+              Durant el 1971 es van dedicar a entrenar i aprendre els fonaments de l'esport, i en
+              1972 es registra oficialment el club, es federen i comencen a competir. Entre els
+              fundadors estaven <strong class="text-dark">Jesús Soldado</strong> (primer president),
+              Toni Catalá, Santos, Pedro, el "Camús", Gaspar Jordan, José Luis Bernal i Grau.
+            </p>
+            <p class="text-dark/70 leading-relaxed">
+              Jugaven i entrenaven a l'estadi municipal, al col·legi Carrasquer —on van haver de
+              col·locar fanals per entrenar de nit— i fins i tot a l'institut laboral. Els
+              començaments no van ser fàcils: jugaven en graners, assecadors i espais improvisats,
+              sovint sense aigua calenta.
+            </p>
+          </div>
+          <div class="lg:col-span-5" data-aos="fade-left">
+            <div class="bg-gray-soft p-4 rounded-sm">
+              <img
+                src="/años70.png"
+                alt="Equip del CH Sueca als anys 70"
+                class="w-full object-contain rounded-sm"
+                loading="lazy"
+              />
+              <p class="text-dark/40 text-xs text-center mt-3 italic">Primer equip del CH Sueca, dècada dels 70</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Salt de qualitat -->
+    <section class="section-padding border-b border-dark/5 bg-gray-soft">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-12" data-aos="fade-up">
+            <span class="text-primary font-heading font-bold text-xs uppercase tracking-widest">Capítol II</span>
+            <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-dark mt-2 mb-6">
+              Salt de qualitat <span class="text-primary">1975–1980</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <p class="text-dark/70 leading-relaxed mb-4 text-lg">
+                  Cap al 1975-1976 arriben dos fets clau: la incorporació de jugadors suecans que
+                  estudien a <strong class="text-dark">la Salle de Paterna</strong> —com Eugenio Vidal,
+                  Ribera i Salvador Renart— i la promoció de l'handbol des de l'AMPA del col·legi de
+                  Fàtima, d'on sorgeixen Vicent Soler, Ximo Serrano, Badenes i Leo.
+                </p>
+              </div>
+              <div>
+                <p class="text-dark/70 leading-relaxed text-lg">
+                  L'any 1978 ja tenien un equip juvenil potent format per Salvador Renart, Ribera,
+                  Ricardo Rodríguez "El Pato", Juan Selma, Juanjo "El Francés" i Quiles. En
+                  <strong class="text-dark">1980 les dues generacions es van ajuntar</strong> a l'equip sènior,
+                  marcant l'inici d'una nova etapa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anys 80 -->
+    <section class="section-padding border-b border-dark/5">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5 lg:order-1" data-aos="fade-right">
+            <div class="bg-gray-soft p-4 rounded-sm">
+              <img
+                src="/años80.png"
+                alt="Equip del CH Sueca als anys 80"
+                class="w-full object-contain rounded-sm"
+                loading="lazy"
+              />
+              <p class="text-dark/40 text-xs text-center mt-3 italic">L'equip als anys 80, ja com a "Club Balonmano Sueca"</p>
+            </div>
+          </div>
+          <div class="lg:col-span-7 lg:order-2" data-aos="fade-left">
+            <span class="text-primary font-heading font-bold text-xs uppercase tracking-widest">Capítol III</span>
+            <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-dark mt-2 mb-6">
+              Consolidació <span class="text-primary">Anys 80</span>
+            </h2>
+            <p class="text-dark/70 leading-relaxed mb-4 text-lg">
+              Des de 1980 fins a 1990 el club va jugar en 1a Autonòmica. El
+              <strong class="text-dark">20 de febrer de 1984</strong> es registra oficialment com a
+              "Club Balonmano Sueca".
+            </p>
+            <div class="bg-primary/5 border-l-4 border-primary p-5 rounded-r-sm mb-4">
+              <p class="text-dark/80 text-sm leading-relaxed">
+                <strong>Primera junta directiva oficial:</strong><br>
+                President: Cándido Serra Martínez · Vicepresident: José Miguel Ribera Esteve ·
+                Secretari: José Luis Bernal Membrilla · Tresorer: Antonio López Campayo ·
+                Vocal: José Luis Beltrán Mari
+              </p>
+            </div>
+            <p class="text-dark/70 leading-relaxed">
+              Entre 1985 i 1990 el club comptava amb un equip juvenil que entrenava amb el sènior.
+              Als partits anaven com podien: en tren, en els cotxes dels jugadors del sènior o en
+              la furgoneta de Cándido Serra. Es reunien a la carnisseria de Pep Soler per a
+              organitzar els desplaçaments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anys 90 -->
+    <section class="section-padding border-b border-dark/5 bg-gray-soft">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7" data-aos="fade-right">
+            <span class="text-primary font-heading font-bold text-xs uppercase tracking-widest">Capítol IV</span>
+            <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-dark mt-2 mb-6">
+              L'esplendor <span class="text-primary">Anys 90</span>
+            </h2>
+            <p class="text-dark/70 leading-relaxed mb-4 text-lg">
+              Els principis dels 90 són els millors moments del club. Gràcies a les gestions de
+              Salvador Renart, la temporada 1991-1992 arriba a Sueca el segon equip de l'Avidesa,
+              l'<strong class="text-dark">"Alzira Sueca Reynalco"</strong>, que jugaria en 2a Nacional
+              com a filial. Aquest equip guanya la lliga i ascendeix a 1a Nacional.
+            </p>
+            <p class="text-dark/70 leading-relaxed mb-4">
+              El moment de màxima expectació va ser a la temporada 93-94, quan el pavelló de Sueca
+              va ser <strong class="text-dark">sub-seu de la Copa del Rei d'Handbol</strong>, amb
+              l'enfrontament entre el F.C. Barcelona i el Cacaolat Granollers.
+            </p>
+            <p class="text-dark/70 leading-relaxed">
+              L'equip Reynalco va jugar fins a la temporada 1994-1995, quan la crisi econòmica va
+              suposar la dissolució de l'Avidesa. Malgrat això, l'equip sènior va continuar en
+              1a Autonòmica i va guanyar la <strong class="text-dark">final de la Copa Federació
+              l'any 1994</strong>, amb Eduardo Sala com a entrenador.
+            </p>
+          </div>
+          <div class="lg:col-span-5" data-aos="fade-left">
+            <div class="bg-white p-4 rounded-sm shadow-sm">
+              <img
+                src="/años90.png"
+                alt="Equip del CH Sueca als anys 90"
+                class="w-full object-contain rounded-sm"
+                loading="lazy"
+              />
+              <p class="text-dark/40 text-xs text-center mt-3 italic">L'equip durant la dècada daurada dels 90</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Escola + Secció femenina -->
+    <section class="section-padding border-b border-dark/5">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div data-aos="fade-up">
+            <span class="text-primary font-heading font-bold text-xs uppercase tracking-widest">Capítol V</span>
+            <h2 class="font-heading font-extrabold text-2xl md:text-3xl text-dark mt-2 mb-6">
+              L'Escola d'Handbol <span class="text-primary">2000</span>
+            </h2>
+            <p class="text-dark/70 leading-relaxed mb-4">
+              La temporada 2000-2001 suposa la creació de l'Escola d'Handbol a càrrec
+              d'<strong class="text-dark">Eduardo Sala</strong>. Fins aleshores el club
+              només havia tingut l'equip sènior. La seua filosofia: treball, disciplina,
+              compromís i la força del grup per damunt de l'individual.
+            </p>
+            <p class="text-dark/70 leading-relaxed">
+              D'aquesta escola van sorgir jugadors com Eduardo Sorrentino, Salva Sales,
+              Abel Fos, Borja Serra, Javi Martínez o Alfredo Sorrentino, aquest últim
+              arribant a jugar en la ASOVAL.
+            </p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="100">
+            <span class="text-primary font-heading font-bold text-xs uppercase tracking-widest">Capítol VI</span>
+            <h2 class="font-heading font-extrabold text-2xl md:text-3xl text-dark mt-2 mb-6">
+              Secció femenina <span class="text-primary">2011</span>
+            </h2>
+            <p class="text-dark/70 leading-relaxed mb-4">
+              La temporada 2011-2012 es va crear l'equip juvenil femení, entrenat per
+              <strong class="text-dark">Salva Renart</strong>, que passaria a categoria
+              sènior la temporada següent.
+            </p>
+            <p class="text-dark/70 leading-relaxed">
+              Van destacar jugadores com Cristina Llopis, Carla Campins, Celia Rufí,
+              Almudena, Olga, Neus Fortea Sales, Marina i Silvia Sales.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2020 -->
+    <section class="section-padding border-b border-dark/5 bg-gray-soft">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5" data-aos="fade-right">
+            <img
+              src="/año2020.jpeg"
+              alt="Equip del CH Sueca al 2020"
+              class="w-full object-cover rounded-sm shadow-md h-48 md:h-64 lg:h-72"
+              loading="lazy"
+            />
+          </div>
+          <div class="lg:col-span-7" data-aos="fade-left">
+            <span class="text-primary font-heading font-bold text-xs uppercase tracking-widest">Capítol VII</span>
+            <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-dark mt-2 mb-6">
+              Nova era <span class="text-primary">2020</span>
+            </h2>
+            <p class="text-dark/70 leading-relaxed text-lg">
+              Malgrat les dificultats de la pandèmia, el club va saber reinventar-se i mantenir
+              viva la flama del handbol a Sueca. Una nova generació de jugadors va agafar el relleu
+              amb força i il·lusió, demostrant que l'esperit del club és més fort que qualsevol adversitat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- El retorn -->
+    <section class="section-padding border-b border-dark/5">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7" data-aos="fade-right">
+            <span class="text-primary font-heading font-bold text-xs uppercase tracking-widest">Capítol VIII</span>
+            <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-dark mt-2 mb-6">
+              El retorn <span class="text-primary">2024–2025</span>
+            </h2>
+            <p class="text-dark/70 leading-relaxed mb-4 text-lg">
+              Després de dues temporades sense equip sènior masculí, en el 2024 es va tornar
+              a fer l'equip des de zero. La temporada 2024-2025 a Primera Autonòmica va ser
+              un èxit rotund: pese al poc temps que duien els jugadors junts, guanyaren la
+              lliga regular, la fase d'ascens i la final autonòmica, aconseguint l'ascens
+              a Segona Nacional.
+            </p>
+          </div>
+          <div class="lg:col-span-5" data-aos="fade-left">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <img
+                src="/año2025.jpeg"
+                alt="Equip sènior masculí temporada 2024-2025"
+                class="rounded-sm shadow-md w-full object-cover h-36 md:h-48"
+                loading="lazy"
+              />
+              <img
+                src="/ganadores_finalautonomica2025.jpeg"
+                alt="Campions de la final autonòmica 2025"
+                class="rounded-sm shadow-md w-full object-cover h-36 md:h-48"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actualitat -->
+    <section class="section-padding bg-gray-soft">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5 lg:order-1" data-aos="fade-right">
+            <img
+              src="/actualidad_2026.jpeg"
+              alt="Equip sènior masculí temporada 2025-2026 a Segona Nacional"
+              class="w-full object-cover rounded-sm shadow-md h-48 md:h-64 lg:h-72"
+              loading="lazy"
+            />
+          </div>
+          <div class="lg:col-span-7 lg:order-2" data-aos="fade-left">
+            <span class="text-primary font-heading font-bold text-xs uppercase tracking-widest">Capítol IX</span>
+            <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-dark mt-2 mb-6">
+              Actualitat <span class="text-primary">2025–2026</span>
+            </h2>
+            <p class="text-dark/70 leading-relaxed text-lg">
+              Ja a Segona Nacional, l'equip sènior masculí ha realitzat una gran campanya
+              assegurant la categoria en el seu primer any a la divisió. El club continua
+              creixent amb equips en totes les categories i una base cada vegada més àmplia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agraïments -->
+    <section class="py-12 bg-white">
+      <div class="container-custom">
+        <div class="bg-primary/5 border-l-4 border-primary p-8 rounded-r-sm" data-aos="fade-up">
+          <h3 class="font-heading font-bold text-lg text-dark mb-3">Agraïments</h3>
+          <p class="text-dark/60 leading-relaxed text-sm">
+            El Club Handbol Sueca vol agrair a Jesús Soldado, Gaspar Jordan, Salvador Renart i
+            Eduardo Sala pel temps que ens han dedicat i per tota la informació que han posat a la
+            nostra disposició. També volem agrair a Cándido Serra per la seua ajuda desinteressada.
+            Gràcies a la seua col·laboració ha sigut possible documentar la història del nostre club.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </article>
+</BaseLayout>

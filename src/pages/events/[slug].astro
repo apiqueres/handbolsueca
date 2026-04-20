@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { events } from '../../data/events';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return events.map((event) => ({
+    params: { slug: event.slug },
+    props: { event },
+  }));
+};
+
+const { event } = Astro.props;
+---
+
+<BaseLayout title={event.name} description={event.description}>
+  <section class="relative py-20 md:py-32 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src={event.image} alt={event.name} class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-dark/70"></div>
+    </div>
+    <div class="container-custom relative z-10">
+      <span class="text-primary-light font-heading font-bold text-sm uppercase tracking-wider" data-aos="fade-up">
+        {event.category}
+      </span>
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl text-white mt-2" data-aos="fade-up" data-aos-delay="100">
+        {event.name}
+      </h1>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="flex flex-wrap gap-6 mb-8 text-dark/60" data-aos="fade-up">
+        <span class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+          {event.date}
+        </span>
+        <span class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          {event.location}
+        </span>
+      </div>
+      <p class="text-dark/70 leading-relaxed text-lg" data-aos="fade-up">
+        {event.description}
+      </p>
+      <div class="mt-10" data-aos="fade-up">
+        <a href="/events" class="btn-outline-dark">← Tornar als events</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

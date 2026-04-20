@@ -1,0 +1,58 @@
+---
+import { siteConfig } from '../../data/site';
+import StatsCounter from './StatsCounter.astro';
+---
+
+<section class="section-padding bg-white" id="about">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+      <!-- Texto -->
+      <div data-aos="fade-right">
+        <span class="text-primary font-heading font-bold text-sm uppercase tracking-wider">Sobre nosaltres</span>
+        <h2 class="font-heading font-extrabold text-3xl md:text-4xl lg:text-5xl text-dark mt-2 mb-6">
+          Som El <span class="text-primary">Roig</span> des de {siteConfig.founded}
+        </h2>
+        <p class="text-dark/70 leading-relaxed mb-4">
+          El Club Handbol Sueca és una entitat esportiva arrelada a la ciutat de Sueca, amb una
+          llarga trajectòria formant esportistes i promovent els valors del handbol entre xiquets,
+          joves i adults.
+        </p>
+        <p class="text-dark/70 leading-relaxed mb-8">
+          Des dels nostres inicis, hem treballat per fer del handbol un esport referent a la Ribera
+          Baixa. Amb equips en totes les categories, des de l'escola base fins al sènior, el nostre
+          club és una gran família unida per la passió pel handbol.
+        </p>
+
+        <StatsCounter />
+      </div>
+
+      <!-- Imatges -->
+      <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+        <div class="col-span-2">
+          <img
+            src="/ganadores_finalautonomica2025.jpeg"
+            alt="Campions de la final autonòmica 2025"
+            class="w-full h-64 md:h-80 object-cover rounded-sm"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <img
+            src="/charlas-colegio.jpeg"
+            alt="Xerrades als col·legis de Sueca"
+            class="w-full h-40 md:h-48 object-cover rounded-sm"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <img
+            src="/charlas-colegio2.jpeg"
+            alt="Activitats amb xiquets als col·legis"
+            class="w-full h-40 md:h-48 object-cover rounded-sm"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

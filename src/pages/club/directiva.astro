@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const directiva = [
+  { name: 'Nom President/a', role: 'President/a', image: 'https://placehold.co/200x200/D10A11/white?text=President' },
+  { name: 'Nom Vicepresident/a', role: 'Vicepresident/a', image: 'https://placehold.co/200x200/D10A11/white?text=VP' },
+  { name: 'Nom Secretari/a', role: 'Secretari/a', image: 'https://placehold.co/200x200/D10A11/white?text=Secretari' },
+  { name: 'Nom Tresorer/a', role: 'Tresorer/a', image: 'https://placehold.co/200x200/D10A11/white?text=Tresorer' },
+  { name: 'Nom Vocal 1', role: 'Vocal', image: 'https://placehold.co/200x200/D10A11/white?text=Vocal+1' },
+  { name: 'Nom Vocal 2', role: 'Vocal', image: 'https://placehold.co/200x200/D10A11/white?text=Vocal+2' },
+];
+---
+
+<BaseLayout title="Directiva" description="Junta directiva del Club Handbol Sueca">
+  <section class="relative bg-primary py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <img src="/presentacion-todosequiposjuntos.jpeg" alt="" class="w-full h-full object-cover" />
+    </div>
+    <div class="container-custom text-center relative z-10">
+      <h1 class="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-white" data-aos="fade-up">
+        Directiva
+      </h1>
+      <p class="text-white/70 mt-4" data-aos="fade-up" data-aos-delay="100">
+        Les persones que fan possible el club cada dia.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gray-soft">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+        {directiva.map((member) => (
+          <div class="bg-white rounded-sm p-6 text-center shadow-md" data-aos="fade-up">
+            <img
+              src={member.image}
+              alt={member.name}
+              class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+              loading="lazy"
+            />
+            <h3 class="font-heading font-bold text-lg text-dark">{member.name}</h3>
+            <p class="text-primary text-sm font-medium">{member.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

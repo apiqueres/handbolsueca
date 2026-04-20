@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EventCard from '../../components/ui/EventCard.astro';
+import { events } from '../../data/events';
+---
+
+<BaseLayout title="Events" description="Events i activitats del Club Handbol Sueca">
+  <section class="bg-primary py-20">
+    <div class="container-custom text-center">
+      <h1 class="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-white" data-aos="fade-up">
+        Events
+      </h1>
+      <p class="text-white/70 mt-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Descobreix tots els events i activitats del Club Handbol Sueca.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padding bg-gray-soft">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {events.map((event) => (
+          <EventCard
+            slug={event.slug}
+            name={event.name}
+            date={event.date}
+            location={event.location}
+            image={event.image}
+            category={event.category}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

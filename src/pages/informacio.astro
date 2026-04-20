@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Informació" description="Informació pràctica sobre el Club Handbol Sueca: horaris, inscripcions i més">
+  <section class="bg-primary py-20">
+    <div class="container-custom text-center">
+      <h1 class="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-white" data-aos="fade-up">
+        Informació
+      </h1>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div data-aos="fade-up">
+        <h2 class="font-heading font-bold text-2xl text-dark mb-4">Inscripcions</h2>
+        <p class="text-dark/70 leading-relaxed mb-6">
+          Les inscripcions per a la temporada es fan entre juliol i setembre,
+          però pots incorporar-te en qualsevol moment de l'any. Emplena el formulari
+          d'inscripció online o posa't en contacte amb nosaltres.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+          <a href="/inscripcio" class="btn-primary">
+            Fer inscripció
+          </a>
+          <a href="/autoritzacio-imatges" class="btn-outline-dark">
+            Autorització d'imatges
+          </a>
+        </div>
+
+        <h2 class="font-heading font-bold text-2xl text-dark mb-4">Horaris d'entrenament</h2>
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full border-collapse text-center">
+            <thead>
+              <tr>
+                <th class="px-4 py-3 bg-primary text-white font-heading text-sm rounded-tl-sm"></th>
+                <th class="px-4 py-3 bg-primary text-white font-heading text-sm">Dilluns</th>
+                <th class="px-4 py-3 bg-primary text-white font-heading text-sm">Dimecres</th>
+                <th class="px-4 py-3 bg-primary text-white font-heading text-sm rounded-tr-sm">Divendres</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-4 py-3 bg-primary text-white font-heading font-bold text-sm">Cadet Femení</td>
+                <td class="px-4 py-3 bg-white text-sm text-dark border border-gray-soft">18:30 – 19:45</td>
+                <td class="px-4 py-3 bg-white text-sm text-dark border border-gray-soft">19:30 – 20:30</td>
+                <td class="px-4 py-3 bg-white text-sm text-dark border border-gray-soft">18:30 – 19:45</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 bg-primary text-white font-heading font-bold text-sm">Juvenil Femení</td>
+                <td class="px-4 py-3 bg-gray-soft text-sm text-dark border border-white">19:00 – 20:30</td>
+                <td class="px-4 py-3 bg-gray-soft text-sm text-dark border border-white">20:00 – 21:15</td>
+                <td class="px-4 py-3 bg-gray-soft text-sm text-dark border border-white">19:00 – 20:30</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 bg-primary text-white font-heading font-bold text-sm">Infantil Masculí</td>
+                <td class="px-4 py-3 bg-white text-sm text-dark border border-gray-soft">19:45 – 21:15</td>
+                <td class="px-4 py-3 bg-white text-sm text-dark border border-gray-soft">20:30 – 21:45</td>
+                <td class="px-4 py-3 bg-white text-sm text-dark border border-gray-soft">19:45 – 21:15</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 bg-primary text-white font-heading font-bold text-sm rounded-bl-sm">Sènior Masculí</td>
+                <td class="px-4 py-3 bg-gray-soft text-sm text-dark border border-white">20:30 – 22:00</td>
+                <td class="px-4 py-3 bg-gray-soft text-sm text-dark border border-white">21:15 – 22:30</td>
+                <td class="px-4 py-3 bg-gray-soft text-sm text-dark border border-white rounded-br-sm">20:30 – 22:00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="font-heading font-bold text-2xl text-dark mb-4">Quotes</h2>
+        <p class="text-dark/70 leading-relaxed mb-8">
+          Les quotes varien segons la categoria. Per a més informació sobre preus i
+          descomptes per a famílies, contacta amb la secretaria del club.
+        </p>
+
+        <div class="bg-primary/5 border-l-4 border-primary p-4 md:p-6 rounded-sm">
+          <p class="text-dark/70 text-sm">
+            <strong class="text-dark">Nota:</strong> Tots els horaris estan subjectes a canvis
+            segons la disponibilitat del pavelló. Consulteu les xarxes socials per a
+            actualitzacions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

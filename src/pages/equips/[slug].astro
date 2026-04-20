@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { teams } from '../../data/teams';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return teams.map((team) => ({
+    params: { slug: team.slug },
+    props: { team },
+  }));
+};
+
+const { team } = Astro.props;
+---
+
+<BaseLayout title={team.name} description={team.description}>
+  <!-- Hero equipo -->
+  <section class="bg-white">
+    <div class="container-custom pt-10 pb-6 md:pt-14 md:pb-8 text-center">
+      <h1 class="font-heading font-extrabold text-3xl md:text-4xl text-dark" data-aos="fade-up">
+        {team.name}
+      </h1>
+    </div>
+    <div class="container-custom pb-8">
+      <img
+        src={team.image}
+        alt={`Foto de l'equip ${team.name}`}
+        class="w-full h-auto object-contain rounded-sm"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      />
+    </div>
+  </section>
+
+  <!-- Cos tècnic -->
+  {team.staff && team.staff.length > 0 && (
+    <section class="py-12 bg-white">
+      <div class="container-custom">
+        <h2 class="font-heading font-extrabold text-2xl text-dark mb-8 text-center" data-aos="fade-up">
+          Cos Tècnic
+        </h2>
+        <div class="flex flex-wrap justify-center gap-6">
+          {team.staff.map((member) => (
+            <div class="bg-gray-soft rounded-sm p-4 sm:p-6 text-center min-w-[140px] sm:min-w-[200px]" data-aos="fade-up">
+              <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D10A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="font-heading font-bold text-dark">{member.name}</h3>
+              <p class="text-primary text-sm font-medium mt-1">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Plantilla jugadores -->
+  {team.players && team.players.length > 0 && (
+    <section class="section-padding bg-gray-soft">
+      <div class="container-custom">
+        <h2 class="font-heading font-extrabold text-3xl text-dark mb-8 text-center" data-aos="fade-up">
+          Plantilla
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+          {team.players.map((player) => (
+            <div class="bg-white rounded-sm p-6 text-center shadow-md hover:shadow-lg transition-shadow" data-aos="fade-up">
+              <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="font-heading font-extrabold text-2xl text-primary">
+                  {player.number > 0 ? player.number : '—'}
+                </span>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-dark">{player.name}</h3>
+              {player.position !== 'Jugador' && player.position !== 'Jugadora' && (
+                <p class="text-dark/50 text-sm mt-1">{player.position}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA volver -->
+  <section class="py-12 bg-white">
+    <div class="container-custom text-center">
+      <a href="/equips" class="btn-outline-dark">← Tornar als equips</a>
+    </div>
+  </section>
+</BaseLayout>

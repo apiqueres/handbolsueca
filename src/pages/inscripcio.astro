@@ -1,0 +1,515 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Inscripció" description="Formulari d'inscripció al Club Handbol Sueca">
+  <section class="bg-primary py-20">
+    <div class="container-custom text-center">
+      <h1 class="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-white" data-aos="fade-up">
+        Fer Inscripció
+      </h1>
+      <p class="text-white/70 mt-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Emplena el formulari per inscriure't al Club Handbol Sueca.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <form id="inscription-form" class="space-y-10">
+
+        <!-- Categoria -->
+        <div data-aos="fade-up">
+          <h2 class="font-heading font-bold text-2xl text-dark mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+            Categoria
+          </h2>
+          <select id="categoria" required class="w-full sm:w-auto border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors bg-white min-w-[250px]">
+            <option value="">Selecciona una categoria...</option>
+            <option value="Infantil Masculí">Infantil Masculí</option>
+            <option value="Cadet Femení">Cadet Femení</option>
+            <option value="Juvenil Femení">Juvenil Femení</option>
+            <option value="Sènior Masculí">Sènior Masculí</option>
+          </select>
+        </div>
+
+        <!-- Jugador/a -->
+        <div data-aos="fade-up">
+          <h2 class="font-heading font-bold text-2xl text-dark mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+            Jugador/a
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="jugador-nom" class="block text-sm font-medium text-dark mb-1">Nom complet</label>
+              <input type="text" id="jugador-nom" required class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="Nom i cognoms" />
+            </div>
+            <div>
+              <label for="jugador-dni" class="block text-sm font-medium text-dark mb-1">DNI / NIE</label>
+              <input type="text" id="jugador-dni" required class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="12345678A" />
+            </div>
+            <div>
+              <label for="jugador-data" class="block text-sm font-medium text-dark mb-1">Data de naixement</label>
+              <input type="date" id="jugador-data" required class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" />
+            </div>
+            <div>
+              <label for="jugador-tel" class="block text-sm font-medium text-dark mb-1">Telèfon</label>
+              <input type="tel" id="jugador-tel" required class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="600 000 000" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Família (solo menores) -->
+        <div id="familia-section" class="hidden" data-aos="fade-up">
+          <h2 class="font-heading font-bold text-2xl text-dark mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
+            Família (pare/mare/tutor legal)
+          </h2>
+          <p class="text-dark/50 text-sm mb-4">Obligatori per a menors de 18 anys.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="familia-nom" class="block text-sm font-medium text-dark mb-1">Nom complet</label>
+              <input type="text" id="familia-nom" class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="Nom i cognoms" />
+            </div>
+            <div>
+              <label for="familia-dni" class="block text-sm font-medium text-dark mb-1">DNI / NIE</label>
+              <input type="text" id="familia-dni" class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="12345678A" />
+            </div>
+            <div class="sm:col-span-2">
+              <label for="familia-adreca" class="block text-sm font-medium text-dark mb-1">Adreça</label>
+              <input type="text" id="familia-adreca" class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="C/ Exemple, 1" />
+            </div>
+            <div>
+              <label for="familia-poblacio" class="block text-sm font-medium text-dark mb-1">Població</label>
+              <input type="text" id="familia-poblacio" class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="Sueca" />
+            </div>
+            <div>
+              <label for="familia-cp" class="block text-sm font-medium text-dark mb-1">Codi Postal</label>
+              <input type="text" id="familia-cp" class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="46410" />
+            </div>
+            <div>
+              <label for="familia-tel" class="block text-sm font-medium text-dark mb-1">Telèfon</label>
+              <input type="tel" id="familia-tel" class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="600 000 000" />
+            </div>
+            <div>
+              <label for="familia-correu" class="block text-sm font-medium text-dark mb-1">Correu electrònic</label>
+              <input type="email" id="familia-correu" class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="exemple@correu.com" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Quotes -->
+        <div data-aos="fade-up">
+          <h2 class="font-heading font-bold text-2xl text-dark mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">4</span>
+            Quotes i pagament
+          </h2>
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full border-collapse text-center text-sm">
+              <thead>
+                <tr>
+                  <th class="px-3 py-2 bg-primary text-white font-heading"></th>
+                  <th class="px-3 py-2 bg-primary text-white font-heading">Benjamí/Aleví</th>
+                  <th class="px-3 py-2 bg-primary text-white font-heading">Infantil/Cadet</th>
+                  <th class="px-3 py-2 bg-primary text-white font-heading">Juvenil/Sènior</th>
+                  <th class="px-3 py-2 bg-primary text-white font-heading">Data límit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="px-3 py-2 bg-gray-soft font-medium">1r pagament</td>
+                  <td class="px-3 py-2 bg-gray-soft">100€</td>
+                  <td class="px-3 py-2 bg-gray-soft">100€</td>
+                  <td class="px-3 py-2 bg-gray-soft">150€</td>
+                  <td class="px-3 py-2 bg-gray-soft text-dark/60">6 d'agost</td>
+                </tr>
+                <tr>
+                  <td class="px-3 py-2 font-medium">2n pagament</td>
+                  <td class="px-3 py-2">100€</td>
+                  <td class="px-3 py-2">100€</td>
+                  <td class="px-3 py-2">100€</td>
+                  <td class="px-3 py-2 text-dark/60">5 de setembre</td>
+                </tr>
+                <tr>
+                  <td class="px-3 py-2 bg-gray-soft font-medium">3r pagament</td>
+                  <td class="px-3 py-2 bg-gray-soft">50€</td>
+                  <td class="px-3 py-2 bg-gray-soft">100€</td>
+                  <td class="px-3 py-2 bg-gray-soft">100€</td>
+                  <td class="px-3 py-2 bg-gray-soft text-dark/60">6 d'octubre</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="bg-primary/5 border-l-4 border-primary p-4 rounded-r-sm mb-6">
+            <p class="text-dark/70 text-sm">La quota inclou l'equipatge dels jugadors, no així el xandall obligatori.</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="forma-pagament" class="block text-sm font-medium text-dark mb-1">Forma de pagament</label>
+              <select id="forma-pagament" required class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors bg-white">
+                <option value="">Selecciona...</option>
+                <option value="Efectiu">En efectiu (quota sencera)</option>
+                <option value="Transferència">Transferència bancària</option>
+                <option value="Domiciliació">Domiciliació bancària</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Domiciliació -->
+          <div id="domiciliacio-section" class="hidden mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="titular-compte" class="block text-sm font-medium text-dark mb-1">Titular del compte</label>
+              <input type="text" id="titular-compte" class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="Nom del titular" />
+            </div>
+            <div>
+              <label for="iban" class="block text-sm font-medium text-dark mb-1">Número de compte (IBAN)</label>
+              <input type="text" id="iban" class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="ES00 0000 0000 0000 0000 0000" />
+            </div>
+          </div>
+
+          <div class="mt-4 p-4 bg-gray-soft rounded-sm">
+            <p class="text-dark/60 text-xs leading-relaxed">
+              <strong>Compte del club:</strong> Caixa Popular ES87 3159 0048 3923 7398 8522 — Titular: Club Balonmano Sueca
+            </p>
+          </div>
+        </div>
+
+        <!-- Signatura -->
+        <div data-aos="fade-up">
+          <h2 class="font-heading font-bold text-2xl text-dark mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">5</span>
+            Signatura
+          </h2>
+          <p class="text-dark/60 text-sm mb-3">
+            Signa amb el ratolí o amb el dit dins del requadre. Firmant aquest document
+            et compromets a pagar íntegrament tota la quota.
+          </p>
+          <div class="border-2 border-dark/20 rounded-sm bg-white relative">
+            <canvas id="signature-pad" class="w-full" style="height: 200px; touch-action: none;"></canvas>
+            <button type="button" id="clear-signature" class="absolute top-2 right-2 bg-dark/10 hover:bg-dark/20 text-dark/60 text-xs px-3 py-1 rounded-sm transition-colors">
+              Esborrar
+            </button>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="flex flex-col sm:flex-row gap-4 pt-4" data-aos="fade-up">
+          <button type="submit" class="btn-primary text-center flex-1 sm:flex-none">
+            Generar PDF i descarregar
+          </button>
+          <a href="/informacio" class="btn-outline-dark text-center">
+            Tornar a informació
+          </a>
+        </div>
+
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import SignaturePad from 'signature_pad';
+  import { jsPDF } from 'jspdf';
+
+  const canvas = document.getElementById('signature-pad') as HTMLCanvasElement;
+  const form = document.getElementById('inscription-form') as HTMLFormElement;
+  const clearBtn = document.getElementById('clear-signature')!;
+  const paymentSelect = document.getElementById('forma-pagament') as HTMLSelectElement;
+  const domSection = document.getElementById('domiciliacio-section')!;
+
+  function resizeCanvas() {
+    const ratio = Math.max(window.devicePixelRatio || 1, 1);
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * ratio;
+    canvas.height = rect.height * ratio;
+    canvas.getContext('2d')!.scale(ratio, ratio);
+    signaturePad.clear();
+  }
+
+  const signaturePad = new SignaturePad(canvas, {
+    backgroundColor: 'rgb(255, 255, 255)',
+    penColor: 'rgb(10, 10, 10)',
+  });
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  clearBtn.addEventListener('click', () => signaturePad.clear());
+
+  const birthInput = document.getElementById('jugador-data') as HTMLInputElement;
+  const familiaSection = document.getElementById('familia-section')!;
+  const familiaInputs = familiaSection.querySelectorAll('input');
+
+  function checkAge() {
+    const birthDate = new Date(birthInput.value);
+    if (!birthInput.value) {
+      familiaSection.classList.add('hidden');
+      familiaInputs.forEach(i => i.removeAttribute('required'));
+      return;
+    }
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
+
+    if (age < 18) {
+      familiaSection.classList.remove('hidden');
+      familiaInputs.forEach(i => i.setAttribute('required', ''));
+    } else {
+      familiaSection.classList.add('hidden');
+      familiaInputs.forEach(i => i.removeAttribute('required'));
+    }
+  }
+
+  birthInput.addEventListener('change', checkAge);
+
+  paymentSelect.addEventListener('change', () => {
+    domSection.classList.toggle('hidden', paymentSelect.value !== 'Domiciliació');
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (signaturePad.isEmpty()) {
+      alert('Per favor, signa el formulari abans de generar el PDF.');
+      return;
+    }
+
+    const data = {
+      categoria: (document.getElementById('categoria') as HTMLSelectElement).value,
+      jugadorNom: (document.getElementById('jugador-nom') as HTMLInputElement).value,
+      jugadorDni: (document.getElementById('jugador-dni') as HTMLInputElement).value,
+      jugadorData: (document.getElementById('jugador-data') as HTMLInputElement).value,
+      jugadorTel: (document.getElementById('jugador-tel') as HTMLInputElement).value,
+      familiaNom: (document.getElementById('familia-nom') as HTMLInputElement).value,
+      familiaDni: (document.getElementById('familia-dni') as HTMLInputElement).value,
+      familiaAdreca: (document.getElementById('familia-adreca') as HTMLInputElement).value,
+      familiaPoblacio: (document.getElementById('familia-poblacio') as HTMLInputElement).value,
+      familiaCp: (document.getElementById('familia-cp') as HTMLInputElement).value,
+      familiaTel: (document.getElementById('familia-tel') as HTMLInputElement).value,
+      familiaCorreu: (document.getElementById('familia-correu') as HTMLInputElement).value,
+      isMinor: !familiaSection.classList.contains('hidden'),
+      formaPagament: paymentSelect.value,
+      titularCompte: (document.getElementById('titular-compte') as HTMLInputElement).value,
+      iban: (document.getElementById('iban') as HTMLInputElement).value,
+    };
+
+    const doc = new jsPDF('p', 'mm', 'a4');
+    const w = doc.internal.pageSize.getWidth();
+    const margin = 25;
+    const contentW = w - margin * 2;
+    let y = 20;
+
+    // Header
+    doc.setFillColor(107, 19, 32);
+    doc.rect(0, 0, w, 35, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(18);
+    doc.text('CLUB HANDBOL SUECA', w / 2, 15, { align: 'center' });
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.text('C/Ronda del País Valencià, 23 · Sueca – 46410', w / 2, 22, { align: 'center' });
+
+    // Categoria
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text(`CATEGORIA: ${data.categoria}`, w - margin, 30, { align: 'right' });
+
+    y = 45;
+    doc.setTextColor(0, 0, 0);
+
+    // Jugador/a
+    doc.setFillColor(107, 19, 32);
+    doc.rect(margin, y, contentW, 8, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(11);
+    doc.text('JUGADOR/A', margin + 3, y + 5.5);
+    y += 12;
+    doc.setTextColor(0, 0, 0);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+
+    const labelCol = 55;
+    const drawField = (label: string, value: string, x: number, yPos: number, fieldW: number) => {
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(10);
+      doc.text(`${label}:`, x, yPos);
+      doc.setFont('helvetica', 'normal');
+      doc.text(value, x + labelCol, yPos);
+      doc.setDrawColor(180, 180, 180);
+      doc.line(x + labelCol, yPos + 1, x + fieldW, yPos + 1);
+    };
+
+    drawField('Nom', data.jugadorNom, margin, y, contentW);
+    y += 9;
+    drawField('DNI', data.jugadorDni, margin, y, contentW * 0.6);
+    y += 9;
+    drawField('Data de naixement', data.jugadorData, margin, y, contentW * 0.6);
+    y += 9;
+    drawField('Telèfon', data.jugadorTel, margin, y, contentW * 0.6);
+    y += 14;
+
+    // Família (solo menores)
+    if (data.isMinor) {
+      doc.setFillColor(107, 19, 32);
+      doc.rect(margin, y, contentW, 8, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(11);
+      doc.text('FAMÍLIA (pare/mare/tutor legal)', margin + 3, y + 5.5);
+      y += 12;
+      doc.setTextColor(0, 0, 0);
+      doc.setFontSize(10);
+
+      drawField('Nom', data.familiaNom, margin, y, contentW);
+      y += 9;
+      drawField('DNI', data.familiaDni, margin, y, contentW * 0.6);
+      y += 9;
+      drawField('Adreça', data.familiaAdreca, margin, y, contentW);
+      y += 9;
+      drawField('Població', data.familiaPoblacio, margin, y, contentW * 0.45);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(10);
+      doc.text('CP:', margin + contentW * 0.55, y);
+      doc.setFont('helvetica', 'normal');
+      doc.text(data.familiaCp, margin + contentW * 0.55 + 12, y);
+      doc.setDrawColor(180, 180, 180);
+      doc.line(margin + contentW * 0.55 + 12, y + 1, margin + contentW * 0.75, y + 1);
+      y += 9;
+      drawField('Telèfon', data.familiaTel, margin, y, contentW * 0.6);
+      y += 9;
+      drawField('Correu', data.familiaCorreu, margin, y, contentW);
+      y += 14;
+    }
+
+    // Pagament
+    doc.setFillColor(107, 19, 32);
+    doc.rect(margin, y, contentW, 8, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(11);
+    doc.text('FORMES DE PAGAMENT', margin + 3, y + 5.5);
+    y += 12;
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.text('- En efectiu (quota sencera només) a Escarlata Fortea o Jose Primo', margin, y);
+    y += 5;
+    doc.text('- En transferència bancària:', margin, y);
+    y += 5;
+    doc.setFont('helvetica', 'italic');
+    doc.text('Caixa Popular ES87 3159 0048 3923 7398 8522   Titular: Club Balonmano Sueca', margin + 3, y);
+    y += 8;
+
+    // Taula quotes
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    const colW = contentW / 5;
+    const headers = ['', 'Benjamí/Aleví', 'Infantil/Cadet', 'Juvenil/Sènior', 'Data límit'];
+    const rows = [
+      ['1r pagament', '100€', '100€', '150€', '6 d\'agost'],
+      ['2n pagament', '100€', '100€', '100€', '5 de setembre'],
+      ['3r pagament', '50€', '100€', '100€', '6 d\'octubre'],
+    ];
+
+    doc.setFillColor(107, 19, 32);
+    doc.rect(margin, y, contentW, 6, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    headers.forEach((h, i) => {
+      doc.text(h, margin + colW * i + colW / 2, y + 4, { align: 'center' });
+    });
+    y += 6;
+    doc.setTextColor(0, 0, 0);
+    doc.setFont('helvetica', 'normal');
+    rows.forEach((row, ri) => {
+      const bg = ri % 2 === 0 ? 245 : 255;
+      doc.setFillColor(bg, bg, bg);
+      doc.rect(margin, y, contentW, 6, 'F');
+      row.forEach((cell, ci) => {
+        doc.text(cell, margin + colW * ci + colW / 2, y + 4, { align: 'center' });
+      });
+      y += 6;
+    });
+
+    y += 5;
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'bold');
+    doc.text('LA QUOTA INCLOU L\'EQUIPATGE DELS JUGADORS, NO AIXÍ EL XANDALL OBLIGATORI.', margin, y);
+    y += 10;
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Forma de pagament:', margin, y);
+    doc.setFont('helvetica', 'normal');
+    doc.text(data.formaPagament, margin + 48, y);
+    doc.setDrawColor(180, 180, 180);
+    doc.line(margin + 48, y + 1, margin + contentW * 0.6, y + 1);
+    y += 10;
+
+    // Domiciliació
+    if (data.formaPagament === 'Domiciliació') {
+      doc.setFillColor(107, 19, 32);
+      doc.rect(margin, y, contentW, 8, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(11);
+      doc.text('DOMICILIACIÓ OBLIGATÒRIA', margin + 3, y + 5.5);
+      y += 12;
+      doc.setTextColor(0, 0, 0);
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(10);
+      doc.text('Titular del compte:', margin, y);
+      doc.setFont('helvetica', 'normal');
+      doc.text(data.titularCompte, margin + labelCol, y);
+      doc.setDrawColor(180, 180, 180);
+      doc.line(margin + labelCol, y + 1, margin + contentW, y + 1);
+      y += 9;
+      doc.setFont('helvetica', 'bold');
+      doc.text('IBAN:', margin, y);
+      doc.setFont('helvetica', 'normal');
+      doc.text(data.iban, margin + labelCol, y);
+      doc.line(margin + labelCol, y + 1, margin + contentW, y + 1);
+      y += 10;
+      doc.setFontSize(7);
+      doc.setFont('helvetica', 'normal');
+      const domText = 'Mitjançant la signatura d\'aquesta ordre de domiciliació, el deutor autoritza el creditor (Club Handbol Sueca) a enviar instruccions a l\'entitat del deutor per a deure el seu compte i a l\'entitat per a efectuar els seus deutes en el seu compte seguint les instruccions del creditor. Sent el càrrec de les comissions, en cas de devolució per part del deutor.';
+      const lines = doc.splitTextToSize(domText, contentW);
+      doc.text(lines, margin, y);
+      y += lines.length * 3.5 + 4;
+    }
+
+    // Signatura
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9);
+    doc.text('Firmat aquest document en compromet a pagar íntegrament tota la quota.', margin, y);
+    y += 8;
+
+    const today = new Date();
+    const dateStr = `Sueca, a ${today.getDate()} de ${today.toLocaleString('ca', { month: 'long' })} de ${today.getFullYear()}`;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    doc.text(dateStr, margin, y);
+    y += 6;
+
+    // Dibujar firma
+    const sigData = signaturePad.toDataURL('image/png');
+    doc.addImage(sigData, 'PNG', margin, y, 60, 30);
+    y += 35;
+
+    // Pie
+    doc.setDrawColor(107, 19, 32);
+    doc.setLineWidth(0.5);
+    doc.line(margin, y, w - margin, y);
+    y += 5;
+    doc.setFontSize(7);
+    doc.setFont('helvetica', 'italic');
+    doc.text('*Entregar aquest full en mà juntament amb el justificant de pagament, o també, enviar', margin, y);
+    y += 3.5;
+    doc.text('amb signatura digital i còpia del justificant de pagament a admin@handbolsueca.es', margin, y);
+
+    doc.save(`inscripcio_${data.jugadorNom.replace(/\s+/g, '_')}.pdf`);
+  });
+</script>

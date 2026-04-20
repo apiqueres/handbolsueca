@@ -1,0 +1,393 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Autorització d'imatges" description="Formulari d'autorització d'imatges del Club Handbol Sueca">
+  <section class="bg-primary py-20">
+    <div class="container-custom text-center">
+      <h1 class="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-white" data-aos="fade-up">
+        Autorització d'Imatges
+      </h1>
+      <p class="text-white/70 mt-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Consentiment de gravació i publicació d'imatges.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <form id="auth-form" class="space-y-10">
+
+        <!-- Info legal -->
+        <div data-aos="fade-up">
+          <div class="bg-gray-soft p-5 md:p-8 rounded-sm text-dark/70 text-sm leading-relaxed">
+            <p class="italic mb-4">
+              De conformitat amb l'article 18 de la Constitució i regulat per la llei 1/1982, de 5
+              de maig, sobre el dret a l'honor i a la intimitat personal, familiar i a la pròpia imatge,
+              i amb el que es disposa en el Reglament (UE) 2016/679 del Parlament Europeu i del
+              Consell de 27 d'abril de 2016 relatiu a la protecció de les persones físiques pel que fa al
+              tractament de dades personals i a la lliure circulació d'aquests.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dades del responsable -->
+        <div data-aos="fade-up">
+          <h2 class="font-heading font-bold text-2xl text-dark mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+            Dades del/la responsable (pare/mare/tutor legal)
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="resp-nom" class="block text-sm font-medium text-dark mb-1">Nom complet</label>
+              <input type="text" id="resp-nom" required class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="Nom i cognoms" />
+            </div>
+            <div>
+              <label for="resp-dni" class="block text-sm font-medium text-dark mb-1">DNI / NIE</label>
+              <input type="text" id="resp-dni" required class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="12345678A" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Dades del jugador -->
+        <div data-aos="fade-up">
+          <h2 class="font-heading font-bold text-2xl text-dark mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+            Dades del/la jugador/a
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="jugador-nom" class="block text-sm font-medium text-dark mb-1">Nom complet del/la jugador/a</label>
+              <input type="text" id="jugador-nom" required class="w-full border border-dark/20 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors" placeholder="Nom i cognoms" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Informació -->
+        <div data-aos="fade-up">
+          <h2 class="font-heading font-bold text-2xl text-dark mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
+            Informació sobre el tractament
+          </h2>
+          <div class="space-y-3 text-dark/70 text-sm leading-relaxed">
+            <p><strong class="text-dark">a)</strong> El responsable del tractament de dades és el Club Handbol Sueca.</p>
+            <p><strong class="text-dark">b)</strong> És habitual la gravació, mitjançant fotos o vídeos, de les activitats del club amb la finalitat de documentar aquestes activitats.</p>
+            <p><strong class="text-dark">c)</strong> És habitual la publicació d'aquestes imatges/vídeos en la pàgina web del club i també en les seues xarxes socials (Facebook, Instagram) amb la finalitat de promocionar el club, donar-li visibilitat i informar.</p>
+            <p><strong class="text-dark">d)</strong> He sigut informat en matèria de protecció de dades sobre el meu dret a l'accés, rectificació, supressió, limitació i oposició mitjançant un escrit que acredite la meua identitat i que vaja dirigit a:</p>
+            <div class="pl-6">
+              <p>– Club Handbol Sueca: C/ Ronda del País Valencià, 23 – (Sueca 46410)</p>
+              <p>– Correu: admin@handbolsueca.es</p>
+            </div>
+            <p><strong class="text-dark">e)</strong> En cas de no respectar-se els meus drets o els del menor al qual represente, tinc la possibilitat de presentar una reclamació davant l'Agència Espanyola de Protecció de Dades (AEPD), en el seu lloc web: www.aepd.es</p>
+          </div>
+        </div>
+
+        <!-- Autorització -->
+        <div data-aos="fade-up">
+          <h2 class="font-heading font-bold text-2xl text-dark mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">4</span>
+            Autorització
+          </h2>
+          <div class="bg-gray-soft p-5 md:p-8 rounded-sm">
+            <p class="text-dark/80 text-sm mb-6 leading-relaxed">
+              Per la present, <strong>AUTORITZE</strong> la cessió dels drets d'imatge del menor al
+              Club Handbol Sueca perquè puga utilitzar-la, publicar-la o compartir-la en cas que
+              siga necessari en el seu lloc web i xarxes socials que ells gestionen (Facebook, Instagram, etc.)
+            </p>
+            <div class="flex gap-8">
+              <label class="flex items-center gap-3 cursor-pointer">
+                <input type="radio" name="autoritza" value="SI" required class="w-5 h-5 accent-primary" />
+                <span class="font-heading font-bold text-dark text-lg">SÍ</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer">
+                <input type="radio" name="autoritza" value="NO" class="w-5 h-5 accent-primary" />
+                <span class="font-heading font-bold text-dark text-lg">NO</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Signatures -->
+        <div data-aos="fade-up">
+          <h2 class="font-heading font-bold text-2xl text-dark mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">5</span>
+            Signatures
+          </h2>
+          <p class="text-dark/60 text-sm mb-6">
+            I en prova de la meua conformitat, signe el present document en el lloc i la data indicats.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Firma responsable -->
+            <div>
+              <h3 class="font-heading font-bold text-dark mb-2">Responsable (pare/mare/tutor)</h3>
+              <div class="border-2 border-dark/20 rounded-sm bg-white relative">
+                <canvas id="sig-responsable" class="w-full" style="height: 180px; touch-action: none;"></canvas>
+                <button type="button" class="clear-sig absolute top-2 right-2 bg-dark/10 hover:bg-dark/20 text-dark/60 text-xs px-3 py-1 rounded-sm transition-colors" data-target="sig-responsable">
+                  Esborrar
+                </button>
+              </div>
+            </div>
+
+            <!-- Firma jugador (+14) -->
+            <div>
+              <h3 class="font-heading font-bold text-dark mb-2">Jugador/a (major de 14 anys)</h3>
+              <div class="border-2 border-dark/20 rounded-sm bg-white relative">
+                <canvas id="sig-jugador" class="w-full" style="height: 180px; touch-action: none;"></canvas>
+                <button type="button" class="clear-sig absolute top-2 right-2 bg-dark/10 hover:bg-dark/20 text-dark/60 text-xs px-3 py-1 rounded-sm transition-colors" data-target="sig-jugador">
+                  Esborrar
+                </button>
+              </div>
+              <p class="text-dark/40 text-xs mt-2">Opcional si el/la jugador/a és menor de 14 anys.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="flex flex-col sm:flex-row gap-4 pt-4" data-aos="fade-up">
+          <button type="submit" class="btn-primary text-center flex-1 sm:flex-none">
+            Generar PDF i descarregar
+          </button>
+          <a href="/informacio" class="btn-outline-dark text-center">
+            Tornar a informació
+          </a>
+        </div>
+
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import SignaturePad from 'signature_pad';
+  import { jsPDF } from 'jspdf';
+
+  const canvasResp = document.getElementById('sig-responsable') as HTMLCanvasElement;
+  const canvasJug = document.getElementById('sig-jugador') as HTMLCanvasElement;
+  const form = document.getElementById('auth-form') as HTMLFormElement;
+
+  const padOpts = { backgroundColor: 'rgb(255, 255, 255)', penColor: 'rgb(10, 10, 10)' };
+  const sigResp = new SignaturePad(canvasResp, padOpts);
+  const sigJug = new SignaturePad(canvasJug, padOpts);
+
+  function resizeCanvas(canvas: HTMLCanvasElement, pad: SignaturePad) {
+    const ratio = Math.max(window.devicePixelRatio || 1, 1);
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * ratio;
+    canvas.height = rect.height * ratio;
+    canvas.getContext('2d')!.scale(ratio, ratio);
+    pad.clear();
+  }
+
+  function resizeAll() {
+    resizeCanvas(canvasResp, sigResp);
+    resizeCanvas(canvasJug, sigJug);
+  }
+
+  window.addEventListener('resize', resizeAll);
+  resizeAll();
+
+  document.querySelectorAll('.clear-sig').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const target = (btn as HTMLElement).dataset.target;
+      if (target === 'sig-responsable') sigResp.clear();
+      if (target === 'sig-jugador') sigJug.clear();
+    });
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (sigResp.isEmpty()) {
+      alert('Per favor, signa com a responsable abans de generar el PDF.');
+      return;
+    }
+
+    const respNom = (document.getElementById('resp-nom') as HTMLInputElement).value;
+    const respDni = (document.getElementById('resp-dni') as HTMLInputElement).value;
+    const jugadorNom = (document.getElementById('jugador-nom') as HTMLInputElement).value;
+    const autoritza = (document.querySelector('input[name="autoritza"]:checked') as HTMLInputElement)?.value || '';
+
+    const doc = new jsPDF('p', 'mm', 'a4');
+    const w = doc.internal.pageSize.getWidth();
+    const margin = 25;
+    const contentW = w - margin * 2;
+    let y = 0;
+
+    // Header
+    doc.setFillColor(107, 19, 32);
+    doc.rect(0, 0, w, 30, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(13);
+    doc.text('SOL·LICITUD DE CONSENTIMENT DE GRAVACIÓ I PUBLICACIÓ', w / 2, 12, { align: 'center' });
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Club Handbol Sueca · C/Ronda del País Valencià, 23 · Sueca – 46410', w / 2, 22, { align: 'center' });
+
+    y = 40;
+    doc.setTextColor(60, 60, 60);
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'italic');
+    const introText = 'De conformitat amb l\'article 18 de la Constitució i regulat per la llei 1/1982, de 5 de maig, sobre el dret a l\'honor i a la intimitat personal, familiar i a la pròpia imatge, i amb el que es disposa en el Reglament (UE) 2016/679 del Parlament Europeu i del Consell de 27 d\'abril de 2016 relatiu a la protecció de les persones físiques pel que fa al tractament de dades personals i a la lliure circulació d\'aquests.';
+    const introLines = doc.splitTextToSize(introText, contentW);
+    doc.text(introLines, margin, y);
+    y += introLines.length * 3.5 + 6;
+
+    // Datos identificativos
+    doc.setTextColor(0, 0, 0);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    doc.text('Jo, En. / Na.', margin, y);
+    doc.setFont('helvetica', 'bold');
+    doc.text(respNom, margin + 55, y);
+    doc.setDrawColor(180, 180, 180);
+    doc.line(margin + 55, y + 1, margin + contentW, y + 1);
+    y += 8;
+
+    doc.setFont('helvetica', 'normal');
+    doc.text('amb DNI:', margin, y);
+    doc.setFont('helvetica', 'bold');
+    doc.text(respDni, margin + 55, y);
+    doc.line(margin + 55, y + 1, margin + contentW * 0.5, y + 1);
+    doc.setFont('helvetica', 'normal');
+    doc.text(', pare, mare o tutor/a legal del jugador/a', margin + contentW * 0.5 + 2, y);
+    y += 8;
+
+    doc.setFont('helvetica', 'bold');
+    doc.text(jugadorNom, margin, y);
+    doc.setFont('helvetica', 'normal');
+    doc.line(margin, y + 1, margin + contentW * 0.6, y + 1);
+    doc.text(', manifest que:', margin + contentW * 0.6 + 2, y);
+    y += 12;
+
+    // Punts informatius
+    doc.setFillColor(107, 19, 32);
+    doc.rect(margin, y, contentW, 7, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9);
+    doc.text('I.- He sigut informat pel club sobre els següents aspectes:', margin + 3, y + 5);
+    y += 11;
+
+    doc.setTextColor(0, 0, 0);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+
+    const points = [
+      'a) El responsable del tractament de dades és el Club Handbol Sueca.',
+      'b) És habitual la gravació, mitjançant fotos o vídeos, de les activitats del club amb la finalitat de documentar aquestes activitats.',
+      'c) És habitual la publicació d\'aquestes imatges/vídeos en la pàgina web del club i també en les seues xarxes socials (Facebook, Instagram) amb la finalitat de promocionar el club, donar-li visibilitat i informar.',
+      'd) He sigut informat en matèria de protecció de dades sobre el meu dret a l\'accés, rectificació, supressió, limitació i oposició mitjançant un escrit dirigit a:\n   – Club Handbol Sueca: C/ Ronda del País Valencià, 23 – (Sueca 46410)\n   – Correu: admin@handbolsueca.es',
+      'e) En cas de no respectar-se els meus drets, tinc la possibilitat de presentar una reclamació davant l\'Agència Espanyola de Protecció de Dades (AEPD): www.aepd.es',
+    ];
+
+    points.forEach((p) => {
+      const pLines = doc.splitTextToSize(p, contentW - 5);
+      doc.text(pLines, margin + 3, y);
+      y += pLines.length * 3.5 + 2;
+    });
+
+    y += 4;
+
+    // Autorització
+    doc.setFillColor(107, 19, 32);
+    doc.rect(margin, y, contentW, 7, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9);
+    doc.text('II.- Autorització', margin + 3, y + 5);
+    y += 11;
+
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+
+    const siBox = autoritza === 'SI';
+    const noBox = autoritza === 'NO';
+
+    doc.text('Per la present,', margin, y);
+    doc.setFont('helvetica', 'bold');
+
+    // Casella SÍ
+    doc.rect(margin + 33, y - 4, 4, 4);
+    if (siBox) { doc.text('X', margin + 33.7, y - 0.5); }
+    doc.text('SÍ', margin + 39, y);
+
+    // Casella NO
+    doc.rect(margin + 50, y - 4, 4, 4);
+    if (noBox) { doc.text('X', margin + 50.7, y - 0.5); }
+    doc.text('NO', margin + 56, y);
+
+    doc.setFont('helvetica', 'bold');
+    doc.text('AUTORITZE', margin + 67, y);
+    y += 5;
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    const authText = 'la cessió dels drets d\'imatge del menor al Club Handbol Sueca perquè puga utilitzar-la, publicar-la o compartir-la en cas que siga necessari en el seu lloc web i xarxes socials que ells gestionen (Facebook, Instagram, etc.)';
+    const authLines = doc.splitTextToSize(authText, contentW);
+    doc.text(authLines, margin, y);
+    y += authLines.length * 3.5 + 6;
+
+    // Secció III - Signatures
+    doc.setFillColor(107, 19, 32);
+    doc.rect(margin, y, contentW, 7, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9);
+    doc.text('III.- Signatures', margin + 3, y + 5);
+    y += 11;
+
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'normal');
+    doc.text('I en prova de la meua conformitat, signe el present document en el lloc i la data indicats.', margin, y);
+    y += 8;
+
+    const today = new Date();
+    const dateStr = `Sueca, a ${today.getDate()} de ${today.toLocaleString('ca', { month: 'long' })} de ${today.getFullYear()}`;
+
+    const halfW = contentW / 2 - 4;
+
+    // Caixa signatura responsable
+    doc.setDrawColor(150, 150, 150);
+    doc.rect(margin, y, halfW, 45);
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Nom:', margin + 3, y + 5);
+    doc.setFont('helvetica', 'normal');
+    doc.text(respNom, margin + 15, y + 5);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Responsable: Mare / Pare / Tutor/a', margin + 3, y + 10);
+
+    const sigRespData = sigResp.toDataURL('image/png');
+    doc.addImage(sigRespData, 'PNG', margin + 3, y + 13, 50, 22);
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(7);
+    doc.text(dateStr, margin + 3, y + 42);
+
+    // Caixa signatura jugador
+    const x2 = margin + halfW + 8;
+    doc.rect(x2, y, halfW, 45);
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Nom:', x2 + 3, y + 5);
+    doc.setFont('helvetica', 'normal');
+    doc.text(jugadorNom, x2 + 15, y + 5);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Responsable: jugador/a major de 14 anys', x2 + 3, y + 10);
+
+    if (!sigJug.isEmpty()) {
+      const sigJugData = sigJug.toDataURL('image/png');
+      doc.addImage(sigJugData, 'PNG', x2 + 3, y + 13, 50, 22);
+    }
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(7);
+    doc.text(dateStr, x2 + 3, y + 42);
+
+    doc.save(`autoritzacio_imatges_${jugadorNom.replace(/\s+/g, '_')}.pdf`);
+  });
+</script>

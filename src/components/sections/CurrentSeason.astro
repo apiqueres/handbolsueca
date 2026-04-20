@@ -1,0 +1,30 @@
+---
+import TournamentCard from '../ui/TournamentCard.astro';
+
+const featured = [
+  { name: 'Sènior Masculí', category: 'Segona Nacional', slug: 'senior-masculi' },
+  { name: 'Cadet Femení', category: 'Lliga Autonòmica', slug: 'cadet-femeni' },
+  { name: 'Infantil Masculí', category: 'Jocs Esportius', slug: 'infantil-masculi' },
+];
+---
+
+<section class="section-padding bg-primary">
+  <div class="container-custom">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <span class="text-white/70 font-heading font-bold text-sm uppercase tracking-wider">Competicions</span>
+      <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-white mt-2">
+        Temporada en Curs
+      </h2>
+      <p class="text-white/70 mt-4 max-w-2xl mx-auto">
+        Els nostres equips competeixen en diferents categories i lligues.
+        Seguix les seues aventures durant tota la temporada.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {featured.map((team) => (
+        <TournamentCard name={team.name} category={team.category} slug={team.slug} />
+      ))}
+    </div>
+  </div>
+</section>

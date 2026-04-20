@@ -1,0 +1,28 @@
+---
+interface Props {
+  slug: string;
+  name: string;
+  category: string;
+  coach: string;
+  image: string;
+}
+
+const { slug, name, category, coach, image } = Astro.props;
+---
+
+<a href={`/equips/${slug}`} class="group block relative overflow-hidden rounded-sm" data-aos="fade-up">
+  <div class="aspect-[3/4] overflow-hidden">
+    <img
+      src={image}
+      alt={`Equip ${name}`}
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      loading="lazy"
+    />
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent flex flex-col justify-end p-6">
+    <span class="text-primary-light text-xs font-bold uppercase tracking-wider mb-1">{category}</span>
+    <h3 class="text-white font-heading font-bold text-xl mb-1">{name}</h3>
+    <p class="text-white/60 text-sm">Entrenador: {coach}</p>
+  </div>
+  <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300"></div>
+</a>

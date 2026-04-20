@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Qui som" description="Coneix el Club Handbol Sueca, la nostra missió, visió i valors">
+  <section class="bg-primary py-20">
+    <div class="container-custom text-center">
+      <h1 class="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-white" data-aos="fade-up">
+        Qui Som
+      </h1>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div data-aos="fade-up">
+        <h2 class="font-heading font-bold text-2xl text-dark mb-4">La nostra missió</h2>
+        <p class="text-dark/70 leading-relaxed mb-8">
+          Promoure la pràctica del handbol a Sueca i comarca, formant esportistes en un
+          ambient de respecte, companyerisme i superació personal. Volem que cada jugador
+          i jugadora gaudir de l'esport i cresca com a persona.
+        </p>
+
+        <h2 class="font-heading font-bold text-2xl text-dark mb-4">Els nostres valors</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {[
+            { title: 'Treball en equip', desc: "El handbol és un esport col·lectiu. Aprenem a col·laborar i confiar en els companys." },
+            { title: 'Respecte', desc: "Respecte cap als rivals, àrbitres, entrenadors i companys. Sempre." },
+            { title: 'Superació', desc: "Cada entrenament és una oportunitat per millorar. No ens conformem." },
+            { title: 'Inclusió', desc: "El handbol és per a tothom, independentment de l'edat, gènere o nivell." },
+          ].map((valor) => (
+            <div class="bg-gray-soft p-6 rounded-sm">
+              <h3 class="font-heading font-bold text-lg text-primary mb-2">{valor.title}</h3>
+              <p class="text-dark/70 text-sm">{valor.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="font-heading font-bold text-2xl text-dark mb-4">Presència als col·legis</h2>
+        <p class="text-dark/70 leading-relaxed mb-6">
+          Portem el handbol als col·legis de Sueca amb xerrades i activitats per als més
+          joves. Volem que tots els xiquets i xiquetes de la ciutat tinguen l'oportunitat
+          de conèixer i gaudir del nostre esport.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <img src="/charlas-colegio.jpeg" alt="Xerrada al col·legi" class="w-full h-48 object-cover rounded-sm" loading="lazy" />
+          <img src="/charlas-colegio1.jpeg" alt="Activitat al pati del col·legi" class="w-full h-48 object-cover rounded-sm" loading="lazy" />
+          <img src="/charlas-colegio2.jpeg" alt="Xiquets jugant a handbol" class="w-full h-48 object-cover rounded-sm" loading="lazy" />
+        </div>
+
+        <h2 class="font-heading font-bold text-2xl text-dark mb-4">On entrenem</h2>
+        <p class="text-dark/70 leading-relaxed">
+          El Club Handbol Sueca entrena al Pavelló Municipal de Sueca, un espai modern i
+          equipat per a la pràctica del handbol. Les instal·lacions compten amb pista
+          reglamentària, vestuaris i grades per a l'afició.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
