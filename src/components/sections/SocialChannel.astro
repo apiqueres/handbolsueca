@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../../data/site';
+import { withBase } from '../../utils/url';
 ---
 
 <section class="section-padding bg-white">
@@ -50,13 +51,13 @@ import { siteConfig } from '../../data/site';
       <!-- Imágenes superpuestas -->
       <div class="relative pb-8 lg:pb-12" data-aos="fade-left">
         <img
-          src="/mediterranean-senior2.jpeg"
+          src={withBase('/mediterranean-senior2.jpeg')}
           alt="Equip a la Mediterranean Handball Cup"
           class="w-full sm:w-4/5 h-48 sm:h-60 lg:h-72 object-cover rounded-sm shadow-xl"
           loading="lazy"
         />
         <img
-          src="/mediterranean-infantiles.jpeg"
+          src={withBase('/mediterranean-infantiles.jpeg')}
           alt="Infantils a la Mediterranean Handball Cup"
           class="hidden sm:block absolute bottom-0 right-0 w-3/5 h-40 lg:h-56 object-cover rounded-sm shadow-xl border-4 border-white translate-y-8"
           loading="lazy"

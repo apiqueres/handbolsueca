@@ -1,6 +1,7 @@
 ---
 import { events } from '../../data/events';
 import EventCard from '../ui/EventCard.astro';
+import { withBase } from '../../utils/url';
 ---
 
 <section class="section-padding bg-gray-soft">
@@ -26,7 +27,7 @@ import EventCard from '../ui/EventCard.astro';
     </div>
 
     <div class="text-center mt-10" data-aos="fade-up">
-      <a href="/events" class="btn-outline-dark">Veure tots els events</a>
+      <a href={withBase('/events')} class="btn-outline-dark">Veure tots els events</a>
     </div>
   </div>
 </section>

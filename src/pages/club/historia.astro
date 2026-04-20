@@ -1,13 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { siteConfig } from '../../data/site';
+import { withBase } from '../../utils/url';
 ---
 
 <BaseLayout title="Història" description="Història del Club Handbol Sueca des de la seua fundació">
   <!-- Hero -->
   <section class="relative bg-dark py-24 md:py-32 overflow-hidden">
     <div class="absolute inset-0 opacity-20">
-      <img src="/presentacion-todosequiposjuntos.jpeg" alt="" class="w-full h-full object-cover" />
+      <img src={withBase('/presentacion-todosequiposjuntos.jpeg')} alt="" class="w-full h-full object-cover" />
     </div>
     <div class="container-custom relative z-10 text-center">
       <span class="text-primary-light font-heading font-bold text-sm uppercase tracking-widest" data-aos="fade-up">
@@ -56,7 +57,7 @@ import { siteConfig } from '../../data/site';
           <div class="lg:col-span-5" data-aos="fade-left">
             <div class="bg-gray-soft p-4 rounded-sm">
               <img
-                src="/años70.png"
+                src={withBase('/años70.png')}
                 alt="Equip del CH Sueca als anys 70"
                 class="w-full object-contain rounded-sm"
                 loading="lazy"
@@ -107,7 +108,7 @@ import { siteConfig } from '../../data/site';
           <div class="lg:col-span-5 lg:order-1" data-aos="fade-right">
             <div class="bg-gray-soft p-4 rounded-sm">
               <img
-                src="/años80.png"
+                src={withBase('/años80.png')}
                 alt="Equip del CH Sueca als anys 80"
                 class="w-full object-contain rounded-sm"
                 loading="lazy"
@@ -174,7 +175,7 @@ import { siteConfig } from '../../data/site';
           <div class="lg:col-span-5" data-aos="fade-left">
             <div class="bg-white p-4 rounded-sm shadow-sm">
               <img
-                src="/años90.png"
+                src={withBase('/años90.png')}
                 alt="Equip del CH Sueca als anys 90"
                 class="w-full object-contain rounded-sm"
                 loading="lazy"
@@ -232,7 +233,7 @@ import { siteConfig } from '../../data/site';
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div class="lg:col-span-5" data-aos="fade-right">
             <img
-              src="/año2020.jpeg"
+              src={withBase('/año2020.jpeg')}
               alt="Equip del CH Sueca al 2020"
               class="w-full object-cover rounded-sm shadow-md h-48 md:h-64 lg:h-72"
               loading="lazy"
@@ -273,13 +274,13 @@ import { siteConfig } from '../../data/site';
           <div class="lg:col-span-5" data-aos="fade-left">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <img
-                src="/año2025.jpeg"
+                src={withBase('/año2025.jpeg')}
                 alt="Equip sènior masculí temporada 2024-2025"
                 class="rounded-sm shadow-md w-full object-cover h-36 md:h-48"
                 loading="lazy"
               />
               <img
-                src="/ganadores_finalautonomica2025.jpeg"
+                src={withBase('/ganadores_finalautonomica2025.jpeg')}
                 alt="Campions de la final autonòmica 2025"
                 class="rounded-sm shadow-md w-full object-cover h-36 md:h-48"
                 loading="lazy"
@@ -296,7 +297,7 @@ import { siteConfig } from '../../data/site';
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div class="lg:col-span-5 lg:order-1" data-aos="fade-right">
             <img
-              src="/actualidad_2026.jpeg"
+              src={withBase('/actualidad_2026.jpeg')}
               alt="Equip sènior masculí temporada 2025-2026 a Segona Nacional"
               class="w-full object-cover rounded-sm shadow-md h-48 md:h-64 lg:h-72"
               loading="lazy"

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/url';
 ---
 
 <BaseLayout title="Informació" description="Informació pràctica sobre el Club Handbol Sueca: horaris, inscripcions i més">
@@ -21,10 +22,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           d'inscripció online o posa't en contacte amb nosaltres.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 mb-8">
-          <a href="/inscripcio" class="btn-primary">
+          <a href={withBase('/inscripcio')} class="btn-primary">
             Fer inscripció
           </a>
-          <a href="/autoritzacio-imatges" class="btn-outline-dark">
+          <a href={withBase('/autoritzacio-imatges')} class="btn-outline-dark">
             Autorització d'imatges
           </a>
         </div>

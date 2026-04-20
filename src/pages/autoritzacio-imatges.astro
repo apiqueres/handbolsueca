@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/url';
 ---
 
 <BaseLayout title="Autorització d'imatges" description="Formulari d'autorització d'imatges del Club Handbol Sueca">
@@ -148,7 +149,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <button type="submit" class="btn-primary text-center flex-1 sm:flex-none">
             Generar PDF i descarregar
           </button>
-          <a href="/informacio" class="btn-outline-dark text-center">
+          <a href={withBase('/informacio')} class="btn-outline-dark text-center">
             Tornar a informació
           </a>
         </div>

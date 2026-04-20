@@ -1,12 +1,13 @@
 ---
 import { siteConfig } from '../../data/site';
+import { withBase } from '../../utils/url';
 ---
 
 <header id="site-header" class="bg-primary sticky top-0 z-50 transition-shadow duration-300">
   <div class="container-custom">
     <nav class="flex items-center justify-between h-14 sm:h-16 md:h-20" aria-label="Navegació principal">
       <!-- Logo -->
-      <a href="/" class="flex flex-col group leading-none">
+      <a href={withBase('/')} class="flex flex-col group leading-none">
         <span class="text-white font-heading font-extrabold text-lg md:text-xl tracking-tight">
           CH SUECA
         </span>
@@ -33,7 +34,7 @@ import { siteConfig } from '../../data/site';
                   {item.children.map((child) => (
                     <li>
                       <a
-                        href={child.href}
+                        href={withBase(child.href)}
                         class="block px-5 py-2.5 text-dark hover:bg-primary hover:text-white text-sm font-medium transition-colors"
                       >
                         {child.label}
@@ -44,7 +45,7 @@ import { siteConfig } from '../../data/site';
               </>
             ) : (
               <a
-                href={item.href}
+                href={withBase(item.href!)}
                 class="text-white/90 hover:text-white font-heading font-bold text-sm uppercase tracking-wider px-4 py-2 transition-colors"
               >
                 {item.label}
@@ -80,7 +81,7 @@ import { siteConfig } from '../../data/site';
                 <ul class="mobile-submenu hidden pl-4">
                   {item.children.map((child) => (
                     <li>
-                      <a href={child.href} class="block text-white/70 hover:text-white text-sm px-4 py-2 transition-colors">
+                      <a href={withBase(child.href)} class="block text-white/70 hover:text-white text-sm px-4 py-2 transition-colors">
                         {child.label}
                       </a>
                     </li>
@@ -88,7 +89,7 @@ import { siteConfig } from '../../data/site';
                 </ul>
               </div>
             ) : (
-              <a href={item.href} class="block text-white/90 hover:text-white font-heading font-bold text-sm uppercase tracking-wider px-4 py-3">
+              <a href={withBase(item.href!)} class="block text-white/90 hover:text-white font-heading font-bold text-sm uppercase tracking-wider px-4 py-3">
                 {item.label}
               </a>
             )}

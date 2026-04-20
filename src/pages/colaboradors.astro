@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { sponsors } from '../data/sponsors';
+import { withBase } from '../utils/url';
 ---
 
 <BaseLayout title="Col·laboradors" description="Patrocinadors i col·laboradors del Club Handbol Sueca">
@@ -42,7 +43,7 @@ import { sponsors } from '../data/sponsors';
           Si la teua empresa o entitat vol col·laborar amb el Club Handbol Sueca,
           posa't en contacte amb nosaltres. Junts fem créixer el handbol a Sueca!
         </p>
-        <a href="/club/contacte" class="btn-primary">Contacta'ns</a>
+        <a href={withBase('/club/contacte')} class="btn-primary">Contacta'ns</a>
       </div>
     </div>
   </section>

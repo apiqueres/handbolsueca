@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from '../../data/site';
 import StatsCounter from './StatsCounter.astro';
+import { withBase } from '../../utils/url';
 ---
 
 <section class="section-padding bg-white" id="about">
@@ -30,7 +31,7 @@ import StatsCounter from './StatsCounter.astro';
       <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
         <div class="col-span-2">
           <img
-            src="/ganadores_finalautonomica2025.jpeg"
+            src={withBase('/ganadores_finalautonomica2025.jpeg')}
             alt="Campions de la final autonòmica 2025"
             class="w-full h-64 md:h-80 object-cover rounded-sm"
             loading="lazy"
@@ -38,7 +39,7 @@ import StatsCounter from './StatsCounter.astro';
         </div>
         <div>
           <img
-            src="/charlas-colegio.jpeg"
+            src={withBase('/charlas-colegio.jpeg')}
             alt="Xerrades als col·legis de Sueca"
             class="w-full h-40 md:h-48 object-cover rounded-sm"
             loading="lazy"
@@ -46,7 +47,7 @@ import StatsCounter from './StatsCounter.astro';
         </div>
         <div>
           <img
-            src="/charlas-colegio2.jpeg"
+            src={withBase('/charlas-colegio2.jpeg')}
             alt="Activitats amb xiquets als col·legis"
             class="w-full h-40 md:h-48 object-cover rounded-sm"
             loading="lazy"

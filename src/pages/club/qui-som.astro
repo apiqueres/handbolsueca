@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../utils/url';
 ---
 
 <BaseLayout title="Qui som" description="Coneix el Club Handbol Sueca, la nostra missió, visió i valors">
@@ -43,9 +44,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           de conèixer i gaudir del nostre esport.
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <img src="/charlas-colegio.jpeg" alt="Xerrada al col·legi" class="w-full h-48 object-cover rounded-sm" loading="lazy" />
-          <img src="/charlas-colegio1.jpeg" alt="Activitat al pati del col·legi" class="w-full h-48 object-cover rounded-sm" loading="lazy" />
-          <img src="/charlas-colegio2.jpeg" alt="Xiquets jugant a handbol" class="w-full h-48 object-cover rounded-sm" loading="lazy" />
+          <img src={withBase('/charlas-colegio.jpeg')} alt="Xerrada al col·legi" class="w-full h-48 object-cover rounded-sm" loading="lazy" />
+          <img src={withBase('/charlas-colegio1.jpeg')} alt="Activitat al pati del col·legi" class="w-full h-48 object-cover rounded-sm" loading="lazy" />
+          <img src={withBase('/charlas-colegio2.jpeg')} alt="Xiquets jugant a handbol" class="w-full h-48 object-cover rounded-sm" loading="lazy" />
         </div>
 
         <h2 class="font-heading font-bold text-2xl text-dark mb-4">On entrenem</h2>

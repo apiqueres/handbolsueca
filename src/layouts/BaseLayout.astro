@@ -8,6 +8,7 @@ import TopBar from '../components/layout/TopBar.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import { siteConfig } from '../data/site';
+import { withBase } from '../utils/url';
 
 interface Props {
   title?: string;
@@ -33,7 +34,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url);
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonicalUrl.toString()} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />

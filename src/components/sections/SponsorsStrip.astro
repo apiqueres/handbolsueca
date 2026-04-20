@@ -1,5 +1,6 @@
 ---
 import { sponsors } from '../../data/sponsors';
+import { withBase } from '../../utils/url';
 ---
 
 <section class="py-12 bg-white">
@@ -31,7 +32,7 @@ import { sponsors } from '../../data/sponsors';
     </div>
 
     <div class="text-center mt-8" data-aos="fade-up">
-      <a href="/colaboradors" class="text-primary hover:text-primary-dark font-heading font-bold text-sm uppercase tracking-wider transition-colors">
+      <a href={withBase('/colaboradors')} class="text-primary hover:text-primary-dark font-heading font-bold text-sm uppercase tracking-wider transition-colors">
         Veure tots els col·laboradors →
       </a>
     </div>

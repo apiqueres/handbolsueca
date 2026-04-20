@@ -1,6 +1,7 @@
 ---
 import { teams } from '../../data/teams';
 import TeamCard from '../ui/TeamCard.astro';
+import { withBase } from '../../utils/url';
 ---
 
 <section class="section-padding bg-primary">
@@ -25,7 +26,7 @@ import TeamCard from '../ui/TeamCard.astro';
     </div>
 
     <div class="text-center mt-10" data-aos="fade-up">
-      <a href="/equips" class="btn-outline">Veure tots els equips</a>
+      <a href={withBase('/equips')} class="btn-outline">Veure tots els equips</a>
     </div>
   </div>
 </section>

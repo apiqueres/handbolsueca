@@ -1,12 +1,13 @@
 ---
 import { siteConfig } from '../../data/site';
 import Button from '../ui/Button.astro';
+import { withBase } from '../../utils/url';
 ---
 
 <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
   <div class="absolute inset-0">
     <img
-      src="/presentacion-todosequiposjuntos.jpeg"
+      src={withBase('/presentacion-todosequiposjuntos.jpeg')}
       alt="Presentació de tots els equips del Club Handbol Sueca"
       class="w-full h-full object-cover"
     />
@@ -29,8 +30,8 @@ import Button from '../ui/Button.astro';
       Passió pel handbol des de {siteConfig.founded}
     </p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-      <Button href="/club/qui-som" variant="primary">Coneix-nos</Button>
-      <Button href="/equips" variant="outline">Els nostres equips</Button>
+      <Button href={withBase('/club/qui-som')} variant="primary">Coneix-nos</Button>
+      <Button href={withBase('/equips')} variant="outline">Els nostres equips</Button>
     </div>
   </div>
 

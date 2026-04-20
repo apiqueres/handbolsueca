@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../../utils/url';
+
 interface Props {
   name: string;
   category: string;
@@ -14,7 +16,7 @@ const { name, category, slug } = Astro.props;
   </div>
   <span class="text-primary text-xs font-bold uppercase tracking-wider">{category}</span>
   <h3 class="font-heading font-bold text-xl text-dark mt-2 mb-4">{name}</h3>
-  <a href={`/equips/${slug}`} class="text-primary hover:text-primary-dark font-heading font-bold text-sm uppercase tracking-wider transition-colors">
+  <a href={withBase(`/equips/${slug}`)} class="text-primary hover:text-primary-dark font-heading font-bold text-sm uppercase tracking-wider transition-colors">
     Veure detall →
   </a>
 </div>

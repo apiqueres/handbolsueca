@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from '../../data/site';
 import NewsletterForm from './NewsletterForm.astro';
+import { withBase } from '../../utils/url';
 ---
 
 <footer class="bg-dark text-white">
@@ -8,9 +9,9 @@ import NewsletterForm from './NewsletterForm.astro';
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
       <!-- Columna 1: Logo + descripción + newsletter -->
       <div class="lg:col-span-1">
-        <a href="/" class="flex items-center gap-3 mb-4">
+        <a href={withBase('/')} class="flex items-center gap-3 mb-4">
           <img
-            src={siteConfig.logo}
+            src={withBase(siteConfig.logo)}
             alt={`Logo ${siteConfig.name}`}
             width="64"
             height="64"
@@ -33,10 +34,10 @@ import NewsletterForm from './NewsletterForm.astro';
           <span class="absolute bottom-0 left-0 w-8 h-0.5 bg-primary -mb-2"></span>
         </h3>
         <ul class="space-y-3 mt-4">
-          <li><a href="/club/historia" class="text-white/60 hover:text-primary-light transition-colors text-sm">Història</a></li>
-          <li><a href="/club/qui-som" class="text-white/60 hover:text-primary-light transition-colors text-sm">Qui som</a></li>
-          <li><a href="/club/directiva" class="text-white/60 hover:text-primary-light transition-colors text-sm">Directiva</a></li>
-          <li><a href="/club/contacte" class="text-white/60 hover:text-primary-light transition-colors text-sm">Contacte</a></li>
+          <li><a href={withBase('/club/historia')} class="text-white/60 hover:text-primary-light transition-colors text-sm">Història</a></li>
+          <li><a href={withBase('/club/qui-som')} class="text-white/60 hover:text-primary-light transition-colors text-sm">Qui som</a></li>
+          <li><a href={withBase('/club/directiva')} class="text-white/60 hover:text-primary-light transition-colors text-sm">Directiva</a></li>
+          <li><a href={withBase('/club/contacte')} class="text-white/60 hover:text-primary-light transition-colors text-sm">Contacte</a></li>
         </ul>
       </div>
 
@@ -47,10 +48,10 @@ import NewsletterForm from './NewsletterForm.astro';
           <span class="absolute bottom-0 left-0 w-8 h-0.5 bg-primary -mb-2"></span>
         </h3>
         <ul class="space-y-3 mt-4">
-          <li><a href="/equips" class="text-white/60 hover:text-primary-light transition-colors text-sm">Equips</a></li>
-          <li><a href="/events" class="text-white/60 hover:text-primary-light transition-colors text-sm">Events</a></li>
-          <li><a href="/informacio" class="text-white/60 hover:text-primary-light transition-colors text-sm">Informació</a></li>
-          <li><a href="/colaboradors" class="text-white/60 hover:text-primary-light transition-colors text-sm">Col·laboradors</a></li>
+          <li><a href={withBase('/equips')} class="text-white/60 hover:text-primary-light transition-colors text-sm">Equips</a></li>
+          <li><a href={withBase('/events')} class="text-white/60 hover:text-primary-light transition-colors text-sm">Events</a></li>
+          <li><a href={withBase('/informacio')} class="text-white/60 hover:text-primary-light transition-colors text-sm">Informació</a></li>
+          <li><a href={withBase('/colaboradors')} class="text-white/60 hover:text-primary-light transition-colors text-sm">Col·laboradors</a></li>
         </ul>
       </div>
 

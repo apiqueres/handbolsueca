@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { events } from '../../data/events';
+import { withBase } from '../../utils/url';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -16,7 +17,7 @@ const { event } = Astro.props;
 <BaseLayout title={event.name} description={event.description}>
   <section class="relative py-20 md:py-32 overflow-hidden">
     <div class="absolute inset-0">
-      <img src={event.image} alt={event.name} class="w-full h-full object-cover" />
+      <img src={withBase(event.image)} alt={event.name} class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-dark/70"></div>
     </div>
     <div class="container-custom relative z-10">
@@ -45,7 +46,7 @@ const { event } = Astro.props;
         {event.description}
       </p>
       <div class="mt-10" data-aos="fade-up">
-        <a href="/events" class="btn-outline-dark">← Tornar als events</a>
+        <a href={withBase('/events')} class="btn-outline-dark">← Tornar als events</a>
       </div>
     </div>
   </section>
