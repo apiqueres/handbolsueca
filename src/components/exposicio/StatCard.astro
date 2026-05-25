@@ -1,0 +1,47 @@
+---
+interface Props {
+  target: number;
+  label: string;
+  suffix?: string;
+}
+const { target, label, suffix = '' } = Astro.props;
+---
+
+<div class="stat-card reveal">
+  <div class="stat-number exp-display" data-target={target} data-suffix={suffix}>{target}{suffix}</div>
+  <div class="stat-label exp-body">{label}</div>
+</div>
+
+<style>
+  .stat-card {
+    background: var(--board-light);
+    border: 1px solid rgba(74, 184, 224, 0.2);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .stat-card:hover {
+    border-color: var(--chalk-blue);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(74, 184, 224, 0.15);
+  }
+
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    line-height: 1;
+    color: var(--chalk-blue-bright);
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--chalk-dim);
+  }
+</style>

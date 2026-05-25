@@ -53,6 +53,8 @@ const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url);
 
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <slot name="head" />
   </head>
   <body class="font-body antialiased">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded">

@@ -1,0 +1,55 @@
+---
+interface Props {
+  valor: string;
+  label: string;
+}
+const { valor, label } = Astro.props;
+---
+
+<div class="essential-item reveal">
+  <div class="essential-icon">
+    <slot />
+  </div>
+  <div class="essential-valor exp-display">{valor}</div>
+  <div class="essential-label exp-body">{label}</div>
+</div>
+
+<style>
+  .essential-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 2rem 1rem;
+    background: var(--board-light);
+    border: 1px solid rgba(74, 184, 224, 0.15);
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .essential-item:hover {
+    border-color: var(--chalk-blue);
+    transform: translateY(-4px);
+  }
+
+  .essential-icon {
+    color: var(--chalk-blue);
+    margin-bottom: 0.25rem;
+  }
+
+  .essential-valor {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+    color: var(--chalk);
+  }
+
+  .essential-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--chalk-dim);
+  }
+</style>

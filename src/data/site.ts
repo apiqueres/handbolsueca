@@ -53,6 +53,7 @@ export const siteConfig = {
         { label: 'Handbol Platja', href: '/events/handbol-platja' },
       ],
     },
+    { label: 'Exposició', href: '/exposicio' },
     { label: 'Informació', href: '/informacio' },
     { label: 'Col·laboradors', href: '/colaboradors' },
   ] as NavItem[],

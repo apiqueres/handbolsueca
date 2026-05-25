@@ -1,0 +1,833 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/url';
+import '../styles/exposicio-tokens.css';
+
+import ChapterMarker from '../components/exposicio/ChapterMarker.astro';
+import ChalkLine from '../components/exposicio/ChalkLine.astro';
+import StatCard from '../components/exposicio/StatCard.astro';
+import TimelineItem from '../components/exposicio/TimelineItem.astro';
+import TeamCard from '../components/exposicio/TeamCard.astro';
+import RuleCard from '../components/exposicio/RuleCard.astro';
+import EssentialItem from '../components/exposicio/EssentialItem.astro';
+---
+
+<BaseLayout
+  title="Exposició Interactiva"
+  description="Exposició interactiva del Club Handbol Sueca. Més de 50 anys de passió pel handbol a Sueca."
+  ogImage={withBase('/presentacion-todosequiposjuntos.jpeg')}
+>
+  <!-- Google Fonts exclusius d'aquesta pàgina -->
+  <link slot="head" rel="preconnect" href="https://fonts.googleapis.com" />
+  <link slot="head" rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    slot="head"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500&family=Caveat:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <div class="exposicio-wrapper">
+
+    <!-- ══════════════════════════════════════════════════════
+         CAPÍTOL 00 · HERO (portada)
+    ═══════════════════════════════════════════════════════ -->
+    <section id="hero" class="hero-section">
+      <div class="hero-inner">
+        <p class="hero-eyebrow exp-mono" style="animation-delay: 0.2s">
+          Exposició interactiva — Sueca · 2026
+        </p>
+
+        <div class="hero-shield-wrap" style="animation-delay: 0.4s">
+          <img
+            src={withBase('/logochsueca.png')}
+            alt="Escut del Club Handbol Sueca"
+            class="hero-shield"
+            width="110"
+            height="110"
+          />
+        </div>
+
+        <h1 class="hero-title exp-display" style="animation-delay: 0.7s">
+          CLUB HANDBOL<br /><span class="hero-title-red">SUECA</span>
+        </h1>
+
+        <div class="hero-chalkline" style="animation-delay: 0.9s">
+          <ChalkLine width="120px" />
+        </div>
+
+        <p class="hero-subtitle exp-accent" style="animation-delay: 1s">
+          Passió pel handbol des de 1970
+        </p>
+
+        <div class="hero-ctas" style="animation-delay: 1.3s">
+          <a href="#qui-som" class="btn-expo-primary">Comença l'exposició</a>
+          <a href="#joc" class="btn-expo-ghost">Com es juga?</a>
+        </div>
+
+        <div class="hero-scroll-hint" style="animation-delay: 1.8s" aria-hidden="true">
+          <span class="scroll-arrow">↓</span>
+          <span class="scroll-label exp-mono">Scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CAPÍTOL 01 · QUI SOM
+    ═══════════════════════════════════════════════════════ -->
+    <section id="qui-som" class="expo-section">
+      <ChapterMarker numero="01" titol="Identitat" />
+
+      <h2 class="section-title exp-display reveal">
+        Qui som?
+        <span class="title-underline"></span>
+      </h2>
+
+      <div class="qui-som-layout">
+        <div class="qui-som-text reveal">
+          <p class="exp-body section-intro">
+            El Club Handbol Sueca és una entitat esportiva arrelada a la ciutat de Sueca,
+            amb una llarga trajectòria formant esportistes i promovent els valors del handbol
+            entre xiquets, joves i adults. Des dels nostres inicis, hem treballat per fer del
+            handbol un esport referent a la Ribera Baixa.
+          </p>
+        </div>
+        <div class="qui-som-img reveal">
+          <img
+            src={withBase('/presentacion-todosequiposjuntos.jpeg')}
+            alt="Tots els equips del Club Handbol Sueca junts"
+            loading="lazy"
+            class="featured-img"
+          />
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <StatCard target={55} label="Anys d'història" />
+        <StatCard target={6} label="Equips federats" />
+        <StatCard target={120} label="Jugadors" />
+        <StatCard target={50} label="Trofeus" suffix="+" />
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CAPÍTOL 02 · LA NOSTRA HISTÒRIA
+    ═══════════════════════════════════════════════════════ -->
+    <section id="historia" class="expo-section expo-section--alt">
+      <div class="section-inner">
+        <ChapterMarker numero="02" titol="Cronologia" />
+
+        <h2 class="section-title exp-display reveal">La nostra història</h2>
+
+        <p class="section-subtitle exp-accent reveal">
+          Cinc dècades de handbol a Sueca. Aquesta és la nostra línia del temps.
+        </p>
+
+        <div class="timeline-container">
+          <div class="timeline-track" aria-hidden="true"></div>
+
+          <TimelineItem
+            year="Anys 70"
+            label="Orígens"
+            text="Naix el Club Handbol Sueca. Un grup d'aficionats decideix portar el handbol a la nostra ciutat i començar a competir."
+            image={withBase('/años70.png')}
+            imageAlt="Equip del Club Handbol Sueca als anys 70"
+          />
+          <TimelineItem
+            year="Anys 80"
+            label="Creixement"
+            text="El club s'expandeix, sumant equips i jugadors. La camiseta es converteix en un símbol esportiu local."
+            image={withBase('/años80.png')}
+            imageAlt="Equip del Club Handbol Sueca als anys 80"
+          />
+          <TimelineItem
+            year="Anys 90"
+            label="Esplendor"
+            text="L'època daurada del club. Resultats, ascensos i una afició que omple el pavelló cada cap de setmana."
+            image={withBase('/años90.png')}
+            imageAlt="Equip del Club Handbol Sueca als anys 90"
+          />
+          <TimelineItem
+            year="Anys 2000"
+            label="Creació de l'escola"
+            text="El club aposta per la formació des de la base. L'escola de handbol esdevé el cor del projecte esportiu."
+            image={withBase('/charlas-colegio.jpeg')}
+            imageAlt="Activitats de l'escola de handbol en col·legis"
+          />
+          <TimelineItem
+            year="Actualitat"
+            label="Resiliència"
+            text="Un club que continua creixent, formant esportistes i persones, mantenint viva la passió pel handbol a Sueca."
+            image={withBase('/ganadores_finalautonomica2025.jpeg')}
+            imageAlt="Celebració de la final autonòmica 2025"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CAPÍTOL 03 · ELS NOSTRES EQUIPS
+    ═══════════════════════════════════════════════════════ -->
+    <section id="equips" class="expo-section">
+      <ChapterMarker numero="03" titol="La família" />
+
+      <h2 class="section-title exp-display reveal">Els nostres equips</h2>
+
+      <p class="section-intro exp-body reveal">
+        De l'escola base fins al sènior. Una gran família unida per la passió pel handbol.
+      </p>
+
+      <div class="teams-grid">
+        <TeamCard
+          numero="01"
+          categoria="Sènior"
+          nom="Sènior Masculí"
+          entrenador="Salvador Enrique Renart Monton"
+          image={withBase('/senior_masculino.jpeg')}
+          href={withBase('/equips/senior-masculi')}
+        />
+        <TeamCard
+          numero="03"
+          categoria="Juvenil"
+          nom="Juvenil Femení"
+          entrenador="Lucia Fos Cabrera"
+          image={withBase('/juvenil_femenino.jpeg')}
+          href={withBase('/equips/juvenil-femeni')}
+        />
+        <TeamCard
+          numero="04"
+          categoria="Cadet"
+          nom="Cadet Femení"
+          entrenador="Juan David Girbes Navarro"
+          image={withBase('/cadete_femenino.jpeg')}
+          href={withBase('/equips/cadet-femeni')}
+        />
+        <TeamCard
+          numero="05"
+          categoria="Infantil"
+          nom="Infantil Masculí"
+          entrenador="Carles Ramirez Paris"
+          image={withBase('/infantil_masculino.jpeg')}
+          href={withBase('/equips/infantil-masculi')}
+        />
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CAPÍTOL 04 · COM ES JUGA AL HANDBOL?
+    ═══════════════════════════════════════════════════════ -->
+    <section id="joc" class="expo-section expo-section--alt">
+      <div class="section-inner">
+        <ChapterMarker numero="04" titol="El joc" />
+
+        <h2 class="section-title exp-display reveal">Com es juga al handbol?</h2>
+
+        <p class="section-intro exp-body reveal">
+          Un esport ràpid, intens i tècnic. Aquestes són les bases del joc i el camp on succeeix tot.
+        </p>
+
+        <div class="court-block reveal">
+          <img
+            src={withBase('/imagencanchaesxposicion.png')}
+            alt="Pista de handbol reglamentària de 40m × 20m"
+            loading="lazy"
+            class="court-img"
+          />
+        </div>
+
+        <div class="action-img-block reveal">
+          <img
+            src={withBase('/imagenjugadoresexposicion.png')}
+            alt="Jugador en acció, llançament en suspensió"
+            loading="lazy"
+            class="action-img"
+          />
+          <figcaption class="action-caption exp-mono">Llançament en suspensió</figcaption>
+        </div>
+
+        <div class="essentials-grid">
+          <EssentialItem valor="2 × 7" label="Jugadors per equip">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="9" cy="7" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+              <circle cx="17" cy="7" r="3"/><path d="M21 21v-2a4 4 0 0 0-2-3.5"/>
+            </svg>
+          </EssentialItem>
+          <EssentialItem valor="2 × 30'" label="Durada del partit">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </EssentialItem>
+          <EssentialItem valor="3" label="Talles de baló">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+            </svg>
+          </EssentialItem>
+          <EssentialItem valor="≠" label="Equipacions distintes">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/>
+            </svg>
+          </EssentialItem>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CAPÍTOL 05 · ALGUNES REGLES BÀSIQUES
+    ═══════════════════════════════════════════════════════ -->
+    <section id="regles" class="expo-section">
+      <ChapterMarker numero="05" titol="Les regles" />
+
+      <h2 class="section-title exp-display reveal">Algunes regles bàsiques</h2>
+
+      <p class="section-intro exp-body reveal">
+        El handbol té regles que regulen el joc, la tècnica i el comportament.
+        Aquestes són les més importants.
+      </p>
+
+      <div class="rules-grid">
+        <RuleCard
+          numero="01"
+          titol="Tres segons"
+          text="El temps màxim que un jugador pot tenir el baló controlat a les mans és de <strong>3 segons</strong>."
+        />
+        <RuleCard
+          numero="02"
+          titol="Tres passos"
+          text="Amb el baló a les mans, el jugador només pot fer <strong>3 passos</strong> abans de botar, passar o tirar."
+        />
+        <RuleCard
+          numero="03"
+          titol="Doble bot prohibit"
+          text="Si un jugador bota el baló i després l'agafa, <strong>no pot tornar a botar-lo</strong>. Ha de passar-lo o llançar a porteria."
+        />
+        <RuleCard
+          numero="04"
+          titol="Joc net"
+          text="No es pot llançar el baló contra un adversari de manera intencionada. <strong>Esport, no agressió</strong>."
+        />
+        <RuleCard
+          numero="05"
+          titol="Passar el baló"
+          text="Es pot rodar el baló pel terra repetidament amb una mà, i passar-lo d'una mà a l'altra <strong>sense perdre el contacte</strong>."
+        />
+        <RuleCard
+          numero="06"
+          titol="Sense passivitat"
+          text="L'equip que té el baló no pot retenir-lo sense intenció d'atacar. Si l'àrbitre veu passivitat, <strong>el baló canvia d'equip</strong>."
+        />
+        <RuleCard
+          numero="07"
+          titol="Seguretat"
+          text="No es permeten objectes personals que puguen danyar (anells, polseres, rellotges). <strong>La salut, primer</strong>."
+        />
+        <RuleCard
+          numero="08"
+          titol="Joc en suspensió"
+          text="És vàlid llançar el baló en suspensió, agenollat, assegut o estirat. <strong>Tot pot ser gol</strong>."
+        />
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         CTA FINAL · VINE A JUGAR
+    ═══════════════════════════════════════════════════════ -->
+    <section id="vine-a-jugar" class="cta-final-section">
+      <div class="cta-inner">
+        <p class="cta-marker exp-mono reveal">Et sumes?</p>
+
+        <h2 class="cta-title exp-display reveal">
+          <span class="cta-solid">Vine a jugar</span><br />
+          <span class="cta-stroke">amb nosaltres</span>
+        </h2>
+
+        <p class="cta-subtitle exp-accent reveal">
+          El roig t'està esperant al pavelló
+        </p>
+
+        <div class="cta-buttons reveal">
+          <a
+            href="https://www.instagram.com/chsueca/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-expo-primary"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Instagram @chsueca
+          </a>
+          <a href="tel:662082596" class="btn-expo-ghost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            662 082 596
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /exposicio-wrapper -->
+</BaseLayout>
+
+<!-- ══════════════════════════════════════════════════════════
+     SCRIPTS: Reveal + Comptadors animats
+═══════════════════════════════════════════════════════════ -->
+<script>
+  // Reduced motion check
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── Reveal on scroll ────────────────────────────────────────
+  const revealEls = document.querySelectorAll('.reveal');
+
+  if (reducedMotion) {
+    revealEls.forEach(el => el.classList.add('visible'));
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    revealEls.forEach(el => revealObserver.observe(el));
+  }
+
+  // ── Comptadors animats ──────────────────────────────────────
+  const counters = document.querySelectorAll<HTMLElement>('[data-target]');
+
+  if (reducedMotion) {
+    counters.forEach(el => {
+      const target = parseInt(el.dataset.target || '0');
+      const suffix = el.dataset.suffix || '';
+      el.textContent = target + suffix;
+    });
+  } else {
+    const easeOut = (p: number) => 1 - Math.pow(1 - p, 3);
+
+    const counterObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          counterObserver.unobserve(entry.target);
+
+          const el = entry.target as HTMLElement;
+          const target = parseInt(el.dataset.target || '0');
+          const suffix = el.dataset.suffix || '';
+          const duration = 1600;
+          const start = performance.now();
+
+          const tick = (now: number) => {
+            const elapsed = Math.min((now - start) / duration, 1);
+            el.textContent = Math.round(easeOut(elapsed) * target) + suffix;
+            if (elapsed < 1) requestAnimationFrame(tick);
+          };
+
+          requestAnimationFrame(tick);
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    counters.forEach(el => counterObserver.observe(el));
+  }
+</script>
+
+<style>
+  /* ── Hero ────────────────────────────────────────────────── */
+  .hero-section {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 1.5rem 4rem;
+    position: relative;
+    background: radial-gradient(
+      ellipse 80% 60% at 50% 50%,
+      rgba(13, 17, 16, 0) 0%,
+      rgba(13, 17, 16, 0.6) 100%
+    );
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--chalk-blue);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .hero-shield-wrap {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 0 0 4px rgba(209, 10, 17, 0.3),
+      0 0 30px 10px rgba(209, 10, 17, 0.25),
+      0 8px 32px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: shieldIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .hero-shield {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 12vw, 7rem);
+    line-height: 0.95;
+    color: var(--chalk);
+    letter-spacing: 0.02em;
+    margin-bottom: 1.25rem;
+    opacity: 0;
+    animation: fadeSlideIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .hero-title-red {
+    color: var(--chalk-red);
+    text-shadow: 0 0 30px rgba(209, 10, 17, 0.4);
+  }
+
+  .hero-chalkline {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-subtitle {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    color: var(--chalk-blue-bright);
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .hero-scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    opacity: 0;
+    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .scroll-arrow {
+    font-size: 1.5rem;
+    color: var(--chalk-blue);
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  .scroll-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--chalk-dim);
+  }
+
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes shieldIn {
+    from { opacity: 0; transform: scale(0.8) rotate(-8deg); }
+    to   { opacity: 1; transform: scale(1) rotate(0deg); }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(6px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-eyebrow, .hero-shield-wrap, .hero-title,
+    .hero-chalkline, .hero-subtitle, .hero-ctas, .hero-scroll-hint {
+      opacity: 1;
+      animation: none;
+    }
+    .scroll-arrow { animation: none; }
+  }
+
+  /* ── Section titles ─────────────────────────────────────── */
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    line-height: 1;
+    color: var(--chalk);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .title-underline {
+    display: block;
+    height: 3px;
+    width: 80px;
+    margin-top: 0.5rem;
+    background: var(--chalk-blue);
+    box-shadow: 0 0 8px 2px var(--chalk-blue), 0 0 16px 4px rgba(74, 184, 224, 0.3);
+    filter: blur(0.5px);
+  }
+
+  .section-intro {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--chalk-dim);
+    max-width: 680px;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-subtitle {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: var(--chalk-blue-bright);
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── Alt sections (slightly darker bg) ─────────────────── */
+  .expo-section--alt {
+    background: var(--board-deep);
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-inner {
+      padding: 6rem 2rem;
+    }
+  }
+
+  /* ── Cap 01 — Qui som layout ────────────────────────────── */
+  .qui-som-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .qui-som-layout {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .featured-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid rgba(74, 184, 224, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: rgba(74, 184, 224, 0.1);
+  }
+
+  @media (min-width: 640px) {
+    .stats-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* ── Cap 02 — Timeline ──────────────────────────────────── */
+  .timeline-container {
+    position: relative;
+    padding-left: 2.5rem;
+  }
+
+  .timeline-track {
+    position: absolute;
+    left: 7px;
+    top: 0.4rem;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      var(--chalk-blue) 0%,
+      rgba(74, 184, 224, 0.3) 100%
+    );
+    box-shadow: 0 0 6px 1px rgba(74, 184, 224, 0.3);
+  }
+
+  /* ── Cap 03 — Teams grid ────────────────────────────────── */
+  .teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ── Cap 04 — Court + Essentials ────────────────────────── */
+  .court-block {
+    margin-bottom: 2rem;
+  }
+
+  .court-img {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid rgba(74, 184, 224, 0.2);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .action-img-block {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .action-img {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid rgba(74, 184, 224, 0.15);
+    margin: 0 auto;
+    display: block;
+  }
+
+  .action-caption {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--chalk-dim);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    display: block;
+  }
+
+  .essentials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: rgba(74, 184, 224, 0.1);
+  }
+
+  @media (min-width: 640px) {
+    .essentials-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* ── Cap 05 — Rules grid ────────────────────────────────── */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ── CTA Final ──────────────────────────────────────────── */
+  .cta-final-section {
+    padding: 6rem 1.5rem;
+    text-align: center;
+    background: radial-gradient(
+      ellipse 70% 50% at 50% 50%,
+      rgba(209, 10, 17, 0.12) 0%,
+      transparent 70%
+    );
+  }
+
+  .cta-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-marker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--chalk-blue);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 9vw, 6rem);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .cta-solid {
+    display: block;
+    color: var(--chalk);
+  }
+
+  .cta-stroke {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--chalk-red);
+  }
+
+  .cta-subtitle {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    color: var(--chalk-blue-bright);
+    margin-bottom: 2.5rem;
+    display: block;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+</style>

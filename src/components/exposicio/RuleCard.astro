@@ -1,0 +1,64 @@
+---
+interface Props {
+  numero: string;
+  titol: string;
+  text: string;
+}
+const { numero, titol, text } = Astro.props;
+---
+
+<div class="rule-card reveal">
+  <span class="rule-num exp-mono">REGLA {numero}</span>
+  <h3 class="rule-titol">{titol}</h3>
+  <p class="rule-text exp-body" set:html={text}></p>
+</div>
+
+<style>
+  .rule-card {
+    background: var(--board-light);
+    border-left: 3px solid var(--chalk-blue);
+    padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+    transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .rule-card:hover {
+    border-color: var(--chalk-red);
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .rule-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--chalk-red);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .rule-titol {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--chalk);
+    margin-bottom: 0.75rem;
+  }
+
+  .rule-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--chalk-dim);
+  }
+
+  .rule-text :global(strong) {
+    color: var(--chalk-blue-bright);
+    font-weight: 500;
+  }
+</style>

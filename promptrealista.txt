@@ -1,0 +1,50 @@
+Create a hyper-realistic product photograph of a 3D-printed FDM figurine 
+of a pet, with a friendly and expressive facial expression that captures 
+the personality of the animal.
+
+Reproduce the EXACT pose shown in the reference photo: body position, 
+posture (sitting, standing, lying down, etc.), weight distribution, leg 
+placement, tail position, head tilt and orientation, gaze direction, 
+ear position, and mouth expression must all match the reference photo 
+precisely. Do NOT reinterpret or "improve" the pose — copy it faithfully.
+
+Sculpt the figurine faithfully to the reference photo provided: match 
+the species, breed, body proportions, ear shape, eye shape, and any 
+distinctive features visible in the reference. Reproduce the coat in 
+its natural colors and patterns as seen in the photo, including any 
+markings, color transitions, or accents. Coat texture must be sculpted 
+as detailed 3D geometry — visible fur strands or hair patterns modeled 
+into the mesh, NOT painted texture. For short-haired pets, sculpt 
+subtle surface detail; for long-haired pets, sculpt clearly defined 
+fur clumps and strands.
+
+CRITICAL FDM 3D-PRINTING AESTHETIC:
+- Visible horizontal layer lines across the entire surface (FDM print 
+  layers, ~0.2mm resolution)
+- Matte plastic finish (PLA filament look), no glossy highlights
+- Slight stair-stepping on curved surfaces typical of FDM printing
+- Solid multi-color print (the figurine is printed in actual colored 
+  filament, not painted afterwards) — each color region corresponds to 
+  a different filament, with clean boundaries between colors
+- Sharp, clean edges with the characteristic plastic feel of PLA
+- Small, tabletop collectible scale (around 10-12 cm tall)
+
+Lighting and composition:
+- Clean studio product photography
+- Soft, even diffused lighting from above-front, no harsh shadows
+- Plain neutral light gray seamless background
+- Subtle soft shadow under the figurine on the surface
+- Centered composition, eye-level camera, framing the figurine from 
+  the same angle that best showcases the pose from the reference photo
+- Sharp focus on the entire figurine, shallow depth of field on 
+  background only
+
+Style: premium handmade 3D-printed pet figurine, the kind sold as a 
+personalized keepsake. Photorealistic, high detail, professional 
+e-commerce product shot.
+
+DO NOT: smooth the surface, remove layer lines, add airbrushed paint, 
+make it look like resin or porcelain, add accessories, add text or 
+watermarks, alter the natural colors of the pet, change the breed or 
+species, change the pose, reinterpret the body position, force a 
+standard "sitting upright" pose if the reference shows otherwise.

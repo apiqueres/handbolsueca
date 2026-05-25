@@ -1,0 +1,21 @@
+---
+interface Props {
+  width?: string;
+  marginY?: string;
+}
+const { width = '80px', marginY = '1.5rem' } = Astro.props;
+---
+
+<div class="chalk-line" style={`width: ${width}; margin: ${marginY} 0;`}></div>
+
+<style>
+  .chalk-line {
+    height: 3px;
+    background: var(--chalk-blue);
+    box-shadow:
+      0 0 8px 2px var(--chalk-blue),
+      0 0 16px 4px rgba(74, 184, 224, 0.3);
+    filter: blur(0.5px);
+    border-radius: 2px;
+  }
+</style>

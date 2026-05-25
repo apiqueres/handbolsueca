@@ -1,0 +1,137 @@
+---
+interface Props {
+  numero: string;
+  categoria: string;
+  nom: string;
+  entrenador?: string;
+  image: string;
+  href?: string;
+}
+const { numero, categoria, nom, entrenador, image, href } = Astro.props;
+---
+
+<div class="team-card reveal">
+  <span class="team-watermark exp-display" aria-hidden="true">{numero}</span>
+  <div class="team-img-wrap">
+    <img src={image} alt={`Equip ${nom}`} loading="lazy" class="team-img" />
+  </div>
+  <div class="team-info">
+    <span class="team-categoria exp-mono">{categoria}</span>
+    <h3 class="team-nom exp-display">{nom}</h3>
+    {entrenador && (
+      <p class="team-entrenador exp-accent">Entrenador/a: {entrenador}</p>
+    )}
+    {href && (
+      <a href={href} class="team-link exp-mono">Veure equip →</a>
+    )}
+  </div>
+</div>
+
+<style>
+  .team-card {
+    position: relative;
+    background: var(--board-light);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .team-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--chalk-red);
+    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+  }
+
+  .team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .team-card:hover::before {
+    background: var(--chalk-blue);
+    width: 4px;
+    box-shadow: 0 0 8px 2px rgba(74, 184, 224, 0.4);
+  }
+
+  .team-watermark {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.06);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+  }
+
+  .team-img-wrap {
+    overflow: hidden;
+  }
+
+  .team-img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .team-card:hover .team-img {
+    transform: scale(1.04);
+  }
+
+  .team-info {
+    padding: 1.25rem 1.25rem 1.5rem 1.5rem;
+  }
+
+  .team-categoria {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--chalk-blue);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .team-nom {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--chalk);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .team-entrenador {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    color: var(--chalk-dim);
+    margin-bottom: 0.75rem;
+  }
+
+  .team-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--chalk-blue-bright);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .team-link:hover {
+    color: var(--chalk);
+  }
+</style>
